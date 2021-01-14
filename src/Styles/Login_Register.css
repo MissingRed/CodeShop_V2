@@ -1,0 +1,170 @@
+.main-log {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-log__container {
+    display: flex;
+    height: 100vh;
+    width: 40%;
+}
+
+.mani-log__container-margin {
+    display: flex;
+    justify-content: space-between;
+    margin: 15%;
+    margin-bottom: 10%;
+    flex-direction: column;
+    width: 100%;
+}
+
+.main-log__container-img {
+    margin: 5px;
+    width: 50px;
+}
+
+.main-log__container-title {
+    margin: 0;
+    margin-left: 5px;
+}
+
+.main-log_container-form {
+    height: 40vh;
+    margin-top: 15%;
+}
+
+.main-log_container-form_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-log_container-form_input {
+    border: 0;
+    border-bottom: 1.9px solid #31313146;
+    background: transparent;
+    margin-bottom: 50px;
+    outline: none;
+    padding: 10px;
+}
+
+.main-log__container-options {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.main-log__container-options-span {
+    align-items: center;
+    display: flex;
+}
+
+.main-log__container-options_button {
+    border: 0;
+    background-color: black;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0px 0px 40px rgba(22, 22, 22, 0.384);
+    backdrop-filter: saturate(120%) blur(40px);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 70%;
+    letter-spacing: 2px;
+    outline: none;
+    padding: 13px;
+    text-decoration: none;
+    width: auto;
+    -webkit-backdrop-filter: saturate(120%) blur(90px);
+}
+
+.main-log__container-options_button:hover {
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.main-log__container-apart {
+    align-items: center;
+    color: rgba(0, 0, 0, 0.37);
+    display: flex;
+    font-weight: 800;
+}
+
+.main-log__container-apart_text {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.main-log__container-apart_hr {
+    border: 1;
+    border: 1px solid rgba(0, 0, 0, 0.185);
+    height: 0;
+    width: 100%;
+}
+
+.main-log_container-form {
+    text-align: center;
+}
+
+.main-log__container-google {
+    margin-top: 5%;
+    text-align: center;
+}
+
+.main-log__container-google_img {
+    width: 30px;
+}
+
+.main-log__container-create_account_button {
+    border: 0;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+.main-log__wallpaper {
+    background-image: url(https://d1lss44hh2trtw.cloudfront.net/assets/article/2021/01/13/cyberpunk-2077_feature.jpg);
+    color: white;
+    width: 60%;
+}
+
+.main-log__wallpaper-gradient {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.075);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .main-log__wallpaper {
+        display: none;
+    }
+    .main-log__container {
+        width: 100%;
+    }
+    .main-log__container-options span {
+        display: flex;
+        justify-content: center;
+    }
+    .main-log__container-options button {
+        margin-bottom: 10%;
+    }
+    .main-log__container-options {
+        display: block;
+    }
+    .main-log__container-create_account {
+        text-align: center;
+    }
+}

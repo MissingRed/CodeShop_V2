@@ -1,0 +1,109 @@
+.main-landing {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+}
+
+.main-landing__group-content {
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.main-landing__group-items {
+    width: 100%;
+}
+
+.main-landing__group-left {
+    align-items: center;
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-landing__group-left_p {
+    color: white;
+    font-weight: 200;
+    font-size: larger;
+    margin-bottom: 10%;
+}
+
+.main-landing__group-right {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.main-landing__group-right_img {
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 10px;
+    width: 30%;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.main-landing__button-store {
+    border: 0;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: saturate(180%) blur(20px);
+    color: black;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: small;
+    letter-spacing: 2px;
+    outline: none;
+    padding: 13px;
+    text-decoration: none;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+}
+
+.main-landing__button-store:hover {
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.main-landing__video {
+    height: 100%;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+}
+
+.main-landing__group-video {
+    background-repeat: repeat;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    height: 100vh;
+    position: absolute;
+    padding: 0;
+    top: 0;
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    .main-landing__group-content {
+        flex-direction: column-reverse;
+        justify-content: center;
+    }
+    
+    
+    .main-landing__group-right_img {
+        width: 40%;
+    }
+}

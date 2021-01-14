@@ -1,0 +1,143 @@
+.main-navbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.main-navbar__group-title {
+    align-items: center;
+    display: flex;
+}
+
+.main-navbar__left-img {
+    background: transparent;
+    margin-right: 1vw;
+    width: 30px;
+}
+
+.main-navbar__title {
+    color: white;
+    margin: 0;
+}
+
+.main-navbar__center-img {
+    width: 100px;
+}
+
+.main-navbar__right-button {
+    background-color: black;
+    border-bottom-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0px 0px 40px rgba(209, 209, 209, 0.25);
+    backdrop-filter: saturate(120%) blur(40px);
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: small;
+    letter-spacing: 2px;
+    outline: none;
+    padding: 13px;
+    text-decoration: none;
+    -webkit-backdrop-filter: saturate(120%) blur(90px);
+}
+
+.main-navbar__right-button:hover {
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+@media (max-width: 600px) {
+    .main-navbar__center-logo {
+        display: none;
+    }
+    .main-navbar {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
+
+/*Falta Metodologia BEM
+
+.circle-user {
+    width: 30px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.user-items {
+    width: 8%;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.money {
+    width: 25px;
+}
+
+.modal {
+    position: relative;
+    width: calc(10% - 10px);
+    background: white;
+    height: auto;
+    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    position: absolute;
+    border-radius: 5px;
+    top: 80px;
+    left: 87%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9000;
+    text-align: center;
+}
+
+.modal p {
+    background: transparent;
+    font-size: small;
+    color: black;
+}
+
+.modal button {
+    background: #f53c39;
+    border: 0;
+    color: white;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100px;
+    border-radius: 5px;
+    font-size: 12px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.modal button:hover {
+    background: #f35754;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+
+
+.profileEdit {
+    margin-top: 0;
+}
+
+*/
