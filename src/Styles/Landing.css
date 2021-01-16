@@ -98,6 +98,9 @@
 }
 
 @media (max-width: 600px) {
+    .main-landing {
+        height: 110vh;
+    }
     .main-landing__group-content {
         flex-direction: column-reverse;
         justify-content: center;
