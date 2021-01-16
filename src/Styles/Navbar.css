@@ -61,12 +61,6 @@
     height: 100%;
 }
 
-.main-navbar__user_image {
-    border-radius: 10px;
-    cursor: pointer;
-    width: 30px;
-}
-
 .main-navbar__modal-user_image {
     border-radius: 10px;
     cursor: pointer;
@@ -74,6 +68,7 @@
 }
 
 .main-navbar__user-items {
+    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,6 +82,13 @@
 
 .main-navbar__user-items_lang, .main-navbar__user_image, .main-navbar__star_coin {
     margin: 20px;
+}
+
+.main-navbar__user_image {
+    border-radius: 10px;
+    cursor: pointer;
+    width: 30px;
+    margin-right: 0;
 }
 
 .main-navbar__modal {

@@ -1,0 +1,15 @@
+.main-container {
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+@media (max-width: 600px) {
+    .main-container {
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 5%;
+        padding-bottom: 5%;
+    }
+}
