@@ -1,12 +1,43 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useCallback } from "react";
 import firebase from "firebase/app";
 import "firebase/auth";
-import { Redirect } from "react-router";
-
+import app from "../Database/Base.js";
+import { Redirect, withRouter } from "react-router";
 import { AuthContext } from "../Database/Auth.js";
 
-const Register = () => {
+const Register = ({ history }) => {
   const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+  const [values, setValues] = useState();
+
+  const handleInputChange = () => {
+    setValues({ ...values });
+  };
+  const handleRegister = useCallback(
+    async (event) => {
+      event.preventDefault();
+      const { email, password, user } = event.target.elements;
+      setValues({ email, password, user });
+      try {
+        await app
+          .auth()
+          .createUserWithEmailAndPassword(email.value, password.value)
+          .then(function (result) {
+            return result.user.updateProfile({
+              displayName: user.value,
+            });
+          });
+
+        alert("Cuenta creada con exito");
+        history.push("/Home");
+      } catch (error) {
+        alert("Error");
+      }
+    },
+    [history]
+  );
+
+  const { currentUser } = useContext(AuthContext);
 
   const googleAuth = () => {
     firebase
@@ -17,21 +48,34 @@ const Register = () => {
       });
   };
 
-  const { currentUser } = useContext(AuthContext);
-
   if (currentUser) {
     return <Redirect to="/Home" />;
   }
 
   return (
     <>
-      <form className="main-log_container-form_form">
-        <input type="text" className="main-log_container-form_input" />
-        <input type="text" className="main-log_container-form_input" />
-        <input type="password" className="main-log_container-form_input" />
+      <form className="main-log_container-form_form" onSubmit={handleRegister}>
+        <input
+          type="text"
+          className="main-log_container-form_input"
+          name="user"
+          onChange={handleInputChange}
+        />
+        <input
+          className="main-log_container-form_input"
+          name="email"
+          type="email"
+          onChange={handleInputChange}
+        />
+        <input
+          className="main-log_container-form_input"
+          type="password"
+          name="password"
+          onChange={handleInputChange}
+        />
 
         <div className="main-log__container-options">
-          <button className="main-log__container-options_button">
+          <button className="main-log__container-options_button" type="submit">
             REGISTRARSE
           </button>
           <span className="main-log__container-span">
@@ -51,4 +95,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default withRouter(Register);

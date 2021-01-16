@@ -45,7 +45,7 @@ const Navbar = ({ landing }) => {
             <img
               src={
                 currentUser.photoURL === null
-                  ? "Img/4411.png"
+                  ? "Img/defaultUser_img.png"
                   : currentUser.photoURL
               }
               alt="User"
@@ -57,7 +57,7 @@ const Navbar = ({ landing }) => {
                 <img
                   src={
                     currentUser.photoURL === null
-                      ? "Img/4411.png"
+                      ? "Img/defaultUser_img.png"
                       : currentUser.photoURL
                   }
                   alt="User"
