@@ -20,12 +20,11 @@
 }
 
 .main-navbar__title {
-    color: white;
     margin: 0;
 }
 
 .main-navbar__center-img {
-    width: 100px;
+    width: 40px;
 }
 
 .main-navbar__right-button {
@@ -55,6 +54,87 @@
     border-top-left-radius: 15px;
 }
 
+.main-navbar__center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.main-navbar__user_image {
+    border-radius: 10px;
+    cursor: pointer;
+    width: 30px;
+}
+
+.main-navbar__user-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    /* width: 8%; */
+}
+
+.main-navbar__star_coin {
+    width: 25px;
+}
+
+.main-navbar__user-items_lang, .main-navbar__user_image, .main-navbar__star_coin {
+    margin: 20px;
+}
+
+.main-navbar__user_image {
+
+    margin-right: 0;
+}
+
+.main-navbar__modal {
+    display: flex;
+    align-items: center;
+    background: white;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.25);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-radius: 5px;
+    top: 80px;
+    text-align: center;
+    left: 87%;
+    position: relative;
+    padding: 15px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(10% - 10px);
+    height: auto;
+    z-index: 9000;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    position: absolute;
+}
+
+.main-navbar__modal_text {
+    background: transparent;
+    color: black;
+    font-size: small;
+}
+
+.main-navbar__modal_button {
+    background: #f53c39;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    width: 100px;
+}
+
+.main-navbar__modal_button:hover {
+    background: #f35754;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
 @media (max-width: 600px) {
     .main-navbar__center-logo {
         display: none;
@@ -66,78 +146,3 @@
         padding-bottom: 5%;
     }
 }
-
-/*Falta Metodologia BEM
-
-.circle-user {
-    width: 30px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.user-items {
-    width: 8%;
-    display: flex;
-    align-items: center;
-    height: 40px;
-    justify-content: space-between;
-}
-
-.money {
-    width: 25px;
-}
-
-.modal {
-    position: relative;
-    width: calc(10% - 10px);
-    background: white;
-    height: auto;
-    box-shadow: 0px 30px 40px rgba(0, 0, 0, 0.25);
-    -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-    position: absolute;
-    border-radius: 5px;
-    top: 80px;
-    left: 87%;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 9000;
-    text-align: center;
-}
-
-.modal p {
-    background: transparent;
-    font-size: small;
-    color: black;
-}
-
-.modal button {
-    background: #f53c39;
-    border: 0;
-    color: white;
-    padding: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    width: 100px;
-    border-radius: 5px;
-    font-size: 12px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-.modal button:hover {
-    background: #f35754;
-    cursor: pointer;
-    transition: 0.6s;
-}
-
-
-
-.profileEdit {
-    margin-top: 0;
-}
-
-*/

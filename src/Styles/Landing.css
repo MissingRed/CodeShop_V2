@@ -1,4 +1,5 @@
 .main-landing {
+    color: white;
     height: 100%;
     overflow: hidden;
     width: 100%;
@@ -101,8 +102,6 @@
         flex-direction: column-reverse;
         justify-content: center;
     }
-    
-    
     .main-landing__group-right_img {
         width: 40%;
     }

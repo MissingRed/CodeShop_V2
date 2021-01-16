@@ -1,6 +1,7 @@
 import React from "react";
 import "../Styles/Landing.css";
 import Navbar from "../Components/Navbar";
+import { NavLink } from "react-router-dom";
 
 const Landing = () => {
   const videoSource = "Video/video.mp4";
@@ -18,7 +19,7 @@ const Landing = () => {
 
         <div className="main-landing__group-video">
           <div className="main-landing__group-items">
-            <Navbar />
+            <Navbar landing="CodeShop" />
             <div className="main-landing__group-content">
               <div className="main-landing__group-left">
                 <div>
@@ -26,9 +27,9 @@ const Landing = () => {
                   <p className="main-landing__group-left_p">
                     Con el mejor contenido digital
                   </p>
-                  <span to="/Home" className="main-landing__button-store">
+                  <NavLink to="/Home" className="main-landing__button-store">
                     Ir a la Tienda
-                  </span>
+                  </NavLink>
                 </div>
               </div>
               <div className="main-landing__group-right">
