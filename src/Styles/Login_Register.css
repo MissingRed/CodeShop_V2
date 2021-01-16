@@ -52,8 +52,8 @@
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    margin-top: 30px;
-    margin-bottom: 30px;
+    /* margin-top: 30px;
+    margin-bottom: 30px; */
     width: 100%;
 }
 
@@ -97,6 +97,7 @@
     color: rgba(0, 0, 0, 0.37);
     display: flex;
     font-weight: 800;
+    margin-top: 50px;
 }
 
 .main-log__container-apart_text {
@@ -136,7 +137,7 @@
 }
 
 .main-log__container-span {
-    align-items: center;
+ 
     display: flex;
 }
 
@@ -171,12 +172,10 @@
         display: flex;
         justify-content: center;
     }
-    .main-log__container-options button {
-        margin-bottom: 10%;
-    }
-    .main-log__container-options {
+    
+    /* .main-log__container-options {
         display: block;
-    }
+    } */
     .main-log__container-create_account {
         text-align: center;
     }

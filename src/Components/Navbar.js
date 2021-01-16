@@ -61,7 +61,7 @@ const Navbar = ({ landing }) => {
                       : currentUser.photoURL
                   }
                   alt="User"
-                  className="main-navbar__user_image"
+                  className="main-navbar__modal-user_image"
                 />
                 <p className="main-navbar__modal_text">
                   {currentUser.displayName}

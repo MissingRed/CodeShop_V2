@@ -23,6 +23,13 @@ const Login_Register = () => {
                 {register ? <Register state={register} /> : <Login />}
               </div>
             </div>
+            <div className="main-log__container-apart">
+              <hr className="main-log__container-apart_hr" />
+              <div className="main-log__container-apart_text">
+                <p>O</p>
+              </div>
+              <hr className="main-log__container-apart_hr" />
+            </div>
             <div className="main-log__container-create_account">
               <button
                 className="main-log__container-create_account_button"

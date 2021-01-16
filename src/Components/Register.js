@@ -1,6 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
+import firebase from "firebase/app";
+import "firebase/auth";
+import { Redirect } from "react-router";
+
+import { AuthContext } from "../Database/Auth.js";
 
 const Register = () => {
+  const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+  const googleAuth = () => {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .catch((err) => {
+        alert(err);
+      });
+  };
+
+  const { currentUser } = useContext(AuthContext);
+
+  if (currentUser) {
+    return <Redirect to="/Home" />;
+  }
+
   return (
     <>
       <form className="main-log_container-form_form">
@@ -12,20 +34,17 @@ const Register = () => {
           <button className="main-log__container-options_button">
             REGISTRARSE
           </button>
-        </div>
-        <div className="main-log__container-apart">
-          <hr className="main-log__container-apart_hr" />
-          <div className="main-log__container-apart_text">
-            <p>O</p>
-          </div>
-          <hr className="main-log__container-apart_hr" />
-        </div>
-        <div className="main-log__container-google">
-          <img
-            src="Img/Google.png"
-            alt=""
-            className="main-log__container-google_img"
-          />
+          <span className="main-log__container-span">
+            {/* ¿Olvidaste tu contraseña? */}
+            <div className="main-log__container-google">
+              <img
+                src="Img/Google.png"
+                alt="Google"
+                className="main-log__container-google_img"
+                onClick={googleAuth}
+              />
+            </div>
+          </span>
         </div>
       </form>
     </>

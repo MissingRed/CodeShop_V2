@@ -58,23 +58,16 @@ const Login = ({ history }) => {
             INICIAR SESIÓN
           </button>
           <span className="main-log__container-span">
-            ¿Olvidaste tu contraseña?
+            {/* ¿Olvidaste tu contraseña? */}
+            <div className="main-log__container-google">
+              <img
+                src="Img/Google.png"
+                alt="Google"
+                className="main-log__container-google_img"
+                onClick={googleAuth}
+              />
+            </div>
           </span>
-        </div>
-        <div className="main-log__container-apart">
-          <hr className="main-log__container-apart_hr" />
-          <div className="main-log__container-apart_text">
-            <p>O</p>
-          </div>
-          <hr className="main-log__container-apart_hr" />
-        </div>
-        <div className="main-log__container-google">
-          <img
-            src="Img/Google.png"
-            alt="Google"
-            className="main-log__container-google_img"
-            onClick={googleAuth}
-          />
         </div>
       </form>
     </>
