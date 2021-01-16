@@ -1,0 +1,126 @@
+.main-banner {
+    width: 100%;
+    height: 250px;
+    display: flex;
+}
+
+.main-banner__offer {
+    width: 70%;
+    background-color: white;
+    /* margin: 10px; */
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.main-banner__offer_title {
+    position: absolute;
+    color: white;
+    font-size: xx-large;
+    z-index: 9000;
+}
+
+.main-banner__offer_title h3 {
+    margin: 10px;
+    margin-left: 30px;
+    margin-top: 25px;
+    margin-bottom: 7%;
+}
+
+.main-banner__offer_button_buy {
+    display: flex;
+    z-index: 9000;
+}
+
+.main-banner__offer_button_buy p {
+    width: 100%;
+    font-size: 15px;
+    background: #E7EDEF;
+    padding: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+.main-banner__offer_buttons {
+    display: flex;
+    z-index: 9000;
+}
+
+.main-banner__offer_buy {
+    display: flex;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    text-align: center;
+    align-items: center;
+}
+
+.main-banner__see-review {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-banner__offer_button_buy.color-black p {
+    background: black;
+    color: white;
+    border: 3px solid #E7EDEF;
+}
+
+.main-banner__offer video {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    height: 100%;
+    transition: transform 2s, filter 1.5s ease-in-out;
+    transform-origin: center center;
+    filter: brightness(50%);
+}
+
+.main-banner__offer:hover video {
+    filter: brightness(100%);
+    transform: scale(1.3);
+}
+
+.main-banner__video {
+    width: 30%;
+    background-color: white;
+    margin-left: 25px;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-banner__video iframe {
+    border-radius: 20px;
+}
+
+.main-banner__title, .main-banner__subtitle {
+    margin: 0;
+    margin-left: 10px;
+}
+
+.main-banner__video .main-banner__title {
+    margin-top: 15px;
+}
+
+.main-banner__subtitle {
+    font-size: small;
+    color: rgba(0, 0, 0, 0.562);
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .main-sidebar {
+        display: none;
+    }
+    .main-banner__video {
+        display: none;
+    }
+    .main-banner__offer {
+        width: 100%;
+    }
+    .main-banner__offer_title{
+        font-size: x-large;
+    }
+}

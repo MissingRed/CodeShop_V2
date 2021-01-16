@@ -27,8 +27,6 @@ const Register = ({ history }) => {
               displayName: user.value,
             });
           });
-
-        alert("Cuenta creada con exito");
         history.push("/Home");
       } catch (error) {
         alert("Error");

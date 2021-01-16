@@ -1,10 +1,12 @@
 import React, { useEffect, useContext } from "react";
 import { AuthContext } from "../Database/Auth";
-// import app from "../Database/Base.js";
 import Navbar from "../Components/Navbar";
 import Chip from "../Components/Chip";
-import "../Styles/Home.css";
+import Sidebar from "../Components/Sidebar";
+import Banner from "../Components/Banner";
 import Swal from "sweetalert2";
+
+import "../Styles/Home.css";
 
 const Home = () => {
   const { currentUser } = useContext(AuthContext);
@@ -43,15 +45,17 @@ const Home = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="main-container">
+      <div className="sticky-header">
+        <Navbar />
         <Chip />
-        <h1>Home</h1>
       </div>
 
-      {/* 
-      <p>{currentUser.displayName}</p>
-      <button onClick={() => app.auth().signOut()}>Cerrar Sesión</button> */}
+      <div className="main-container">
+        <div className="main-container__margin">
+          <Sidebar />
+          <Banner />
+        </div>
+      </div>
     </>
   );
 };

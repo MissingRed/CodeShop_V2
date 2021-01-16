@@ -68,7 +68,6 @@
 }
 
 .main-navbar__user-items {
-    
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -146,4 +145,12 @@
         padding-top: 5%;
         padding-bottom: 5%;
     }
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background: #e7edef;
+    padding-bottom: 1px;
 }

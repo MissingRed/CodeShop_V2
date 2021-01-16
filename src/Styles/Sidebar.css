@@ -1,0 +1,35 @@
+.main-sidebar {
+    position: sticky;
+    top: 0;
+    width: 220px;
+    height: 70vh;
+}
+
+.main-sidebar__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.main-sidebar__pruducts {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-sidebar__item {
+    font-size: 15px;
+    margin-bottom: 25%;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.582);
+    text-decoration: none;
+}
+
+.main-sidebar__selected {
+    color: black;
+}
+
+@media (max-width: 600px) {
+    .main-sidebar{
+
+        display: none;
+    }
+}
