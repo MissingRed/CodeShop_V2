@@ -98,7 +98,6 @@
 }
 
 @media (max-width: 600px) {
-
     .main-landing__group-content {
         flex-direction: column-reverse;
         justify-content: center;
@@ -106,4 +105,8 @@
     .main-landing__group-right_img {
         width: 40%;
     }
+    .main-landing__video {
+        height: 110vh;
+    }
+    
 }
