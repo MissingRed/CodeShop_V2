@@ -72,7 +72,7 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    margin-left: 100px;
+    margin-left: 3%;
 }
 
 .main-chip__search_input {
