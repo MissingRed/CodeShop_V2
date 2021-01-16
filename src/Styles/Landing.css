@@ -99,7 +99,7 @@
 
 @media (max-width: 600px) {
     .main-landing {
-        height: 110vh;
+        height: 70vh;
     }
     .main-landing__group-content {
         flex-direction: column-reverse;
