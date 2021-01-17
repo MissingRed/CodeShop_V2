@@ -1,8 +1,7 @@
 .main-sidebar {
-    position: sticky;
-    top: 0;
+    /* position: fixed; */
     width: 220px;
-    height: 70vh;
+    height: 75vh;
 }
 
 .main-sidebar__title {
@@ -28,8 +27,7 @@
 }
 
 @media (max-width: 600px) {
-    .main-sidebar{
-
+    .main-sidebar {
         display: none;
     }
 }

@@ -1,4 +1,4 @@
-.card {
+.main-card {
     width: 200px;
     height: 270px;
     background-color: white;
@@ -10,6 +10,7 @@
     /* margin-right: 3%; */
     cursor: pointer;
     margin-bottom: 3%;
+    margin-right: 40px;
 }
 
 .cardSearch {
@@ -22,40 +23,37 @@
     backdrop-filter: saturate(170%) blur(100px);
 }
 
-.photo {
+.main-card__img {
     width: 110px;
     border-radius: 5px;
 }
 
-.titleGame {
+.main-card__product_name {
     font-weight: bold;
     margin-bottom: 0;
 }
 
-.precio {
+.main-card__product_price {
     color: rgba(0, 0, 0, 0.61);
     font-weight: bold;
-}
-
-.precio {
     margin: 0;
 }
 
-.section {
+.main-card__container {
     text-align: center;
 }
 
-.start1 {
+.main-card__favorite {
     width: 100%;
     text-align: end;
 }
 
-.add {
+.main-card__button_Add {
     width: 100%;
     text-align: end;
 }
 
-.circle1 img {
+.main-card__button_circle-img {
     position: absolute;
     padding: 10px;
     border-radius: 50px;
@@ -63,4 +61,11 @@
     border: 10px solid #E7EDEF;
     margin-top: -25px;
     margin-left: -25px;
+}
+
+@media (max-width: 600px) {
+    .main-card {
+        margin-right: 0;
+        margin-bottom: 40px;
+    }
 }

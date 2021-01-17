@@ -5,6 +5,7 @@ import Chip from "../Components/Chip";
 import Sidebar from "../Components/Sidebar";
 import Banner from "../Components/Banner";
 import Swal from "sweetalert2";
+import GameCard from "../Components/GameCard";
 
 import "../Styles/Home.css";
 
@@ -49,11 +50,15 @@ const Home = () => {
         <Navbar />
         <Chip />
       </div>
-
       <div className="main-container">
         <div className="main-container__margin">
           <Sidebar />
-          <Banner />
+          <div className="main-contianer__store">
+            <Banner />
+            <div className="main-container__store_items">
+              <GameCard />
+            </div>
+          </div>
         </div>
       </div>
     </>
