@@ -16,13 +16,17 @@
 
 .main-sidebar__item {
     font-size: 15px;
-    margin-bottom: 25%;
+    margin-bottom: 50px;
     font-weight: bold;
     color: rgba(0, 0, 0, 0.582);
     text-decoration: none;
 }
 
 .main-sidebar__selected {
+    color: black;
+}
+
+.selectedNav {
     color: black;
 }
 

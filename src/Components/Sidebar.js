@@ -9,13 +9,20 @@ const Sidebar = () => {
         <h3 className="main-sidebar__title">Opciones</h3>
         <div className="main-sidebar__pruducts">
           <NavLink
+            to="/Home"
+            activeClassName="selectedNav"
+            className="main-sidebar__item"
+          >
+            Tienda
+          </NavLink>
+          <NavLink
             to="/Profile"
             activeClassName="selectedNav"
             className="main-sidebar__item"
           >
             Perfil
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/Profile"
             activeClassName="selectedNav"
             className="main-sidebar__item"
@@ -49,7 +56,7 @@ const Sidebar = () => {
             className="main-sidebar__item"
           >
             Generos
-          </NavLink>
+          </NavLink> */}
         </div>
       </div>
     </>
