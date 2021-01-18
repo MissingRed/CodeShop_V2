@@ -83,6 +83,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
+    outline: none;
 }
 
 .main-profile__button:hover {
@@ -99,10 +100,9 @@
     display: flex;
     justify-content: center;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
     /* font-weight: bold; */
     border: 1px solid #63f16a;
-
 }
 
 .verificado span {
