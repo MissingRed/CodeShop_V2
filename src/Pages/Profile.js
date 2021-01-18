@@ -66,7 +66,7 @@ const Profile = () => {
                             ) : (
                               <div className="verificado">
                                 <span>Correo Verifiado</span>
-                                <img src="img/check.svg" alt="" />
+                                <img src="Img/check.svg" alt="" />
                               </div>
                             )}
                           </div>
