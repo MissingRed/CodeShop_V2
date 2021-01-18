@@ -60,13 +60,13 @@ const Profile = () => {
                                 onClick={buttonVerified}
                                 className="main-profile__button"
                               >
-                                <img src="Img/alert.svg" alt="" />
+                                <img src="Img/alert.svg" alt="Alert" />
                                 Enviar correo de verificación
                               </button>
                             ) : (
                               <div className="verificado">
                                 <span>Correo Verifiado</span>
-                                <img src="Img/check.svg" alt="" />
+                                <img src="Img/check.svg" alt="Check" />
                               </div>
                             )}
                           </div>
