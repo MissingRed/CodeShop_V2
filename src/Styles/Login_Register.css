@@ -48,6 +48,10 @@
     padding: 10px;
 }
 
+.main-log_container-form_input::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
 .main-log__container-options {
     display: flex;
     flex-direction: row-reverse;
@@ -137,7 +141,6 @@
 }
 
 .main-log__container-span {
- 
     display: flex;
 }
 
@@ -172,7 +175,6 @@
         display: flex;
         justify-content: center;
     }
-    
     /* .main-log__container-options {
         display: block;
     } */

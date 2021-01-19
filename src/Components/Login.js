@@ -47,10 +47,12 @@ const Login = ({ history }) => {
           type="email"
           name="email"
           className="main-log_container-form_input"
+          placeholder="Correo electronico"
         />
         <input
           type="password"
           name="password"
+          placeholder="Contraseña"
           className="main-log_container-form_input"
         />
         <div className="main-log__container-options">

@@ -101,7 +101,7 @@ const Profile = () => {
                             </button>
                           ) : (
                             <div className="verificado">
-                              <span>Correo Verifiado</span>
+                              <span>Correo Verificado</span>
                               <img src="Img/check.svg" alt="Check" />
                             </div>
                           )}

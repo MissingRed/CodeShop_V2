@@ -57,18 +57,21 @@ const Register = ({ history }) => {
           type="text"
           className="main-log_container-form_input"
           name="user"
+          placeholder="Nombre de Usuario"
           onChange={handleInputChange}
         />
         <input
           className="main-log_container-form_input"
           name="email"
           type="email"
+          placeholder="Correo electronico"
           onChange={handleInputChange}
         />
         <input
           className="main-log_container-form_input"
           type="password"
           name="password"
+          placeholder="Contraseña"
           onChange={handleInputChange}
         />
 

@@ -4,6 +4,7 @@ import Landing from "./Pages/Landing";
 import Login_Register from "./Pages/Login_Register";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
+import Card from "./Pages/Card";
 
 import { AuthProvider } from "./Database/Auth";
 import PrivateRoute from "./Components/PrivateRoute";
@@ -19,6 +20,7 @@ const App = () => {
               <Route exact path="/Login" component={Login_Register} />
               <PrivateRoute exact path="/Home" component={Home} />
               <PrivateRoute exact path="/Profile" component={Profile} />
+              <PrivateRoute exact path="/Card" component={Card} />
             </Switch>
           </BrowserRouter>
         </AuthProvider>

@@ -22,6 +22,13 @@ const Sidebar = () => {
           >
             Perfil
           </NavLink>
+          <NavLink
+            to="/Card"
+            activeClassName="selectedNav"
+            className="main-sidebar__item"
+          >
+            Tarjeta Bancaria
+          </NavLink>
           {/* <NavLink
             to="/Profile"
             activeClassName="selectedNav"
