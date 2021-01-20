@@ -4,6 +4,7 @@ import Landing from "./Pages/Landing";
 import Login_Register from "./Pages/Login_Register";
 import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
+import Admin from "./Pages/Admin";
 import Card from "./Pages/Card";
 
 import { AuthProvider } from "./Database/Auth";
@@ -21,6 +22,7 @@ const App = () => {
               <PrivateRoute exact path="/Home" component={Home} />
               <PrivateRoute exact path="/Profile" component={Profile} />
               <PrivateRoute exact path="/Card" component={Card} />
+              <PrivateRoute exact path="/Admin" component={Admin} />
             </Switch>
           </BrowserRouter>
         </AuthProvider>

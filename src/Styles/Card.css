@@ -27,7 +27,7 @@
     border-top-left-radius: 15px;
 }
 
-.info {
+.infocard {
     width: 100%;
     margin-top: 40px;
     height: 40%;
@@ -36,7 +36,7 @@
     align-items: center;
 }
 
-.info h1 {
+.infocard h1 {
     color: rgba(0, 0, 0, 0.425);
     font-weight: 400;
 }

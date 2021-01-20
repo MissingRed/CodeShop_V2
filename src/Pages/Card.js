@@ -21,7 +21,7 @@ const Card = () => {
               Añadir tarjeta bancaria
             </button>
 
-            <div className="info">
+            <div className="infocard">
               <h1>¡Aún no tienes ningún método de pago registrado!</h1>
             </div>
           </div>

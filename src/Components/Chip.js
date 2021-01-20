@@ -1,7 +1,7 @@
 import React from "react";
 import "../Styles/Chip.css";
 
-const Chip = () => {
+const Chip = ({ Search }) => {
   return (
     <>
       <div className="main-chip">
@@ -31,7 +31,11 @@ const Chip = () => {
 
         <div className="main-chip__search">
           <img src="Img/search.svg" alt="" className="icon1" />
-          <input type="text" className="main-chip__search_input" />
+          <input
+            type="text"
+            className="main-chip__search_input"
+            onChange={Search}
+          />
         </div>
       </div>
     </>
