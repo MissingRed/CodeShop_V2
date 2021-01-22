@@ -14,7 +14,9 @@ const Navbar = ({ landing }) => {
         <div className="main-navbar__group-title">
           <img
             src={
-              !landing ? "Img/align-justify.svg" : "Img/align-justify_land.svg"
+              !landing
+                ? "../Img/align-justify.svg"
+                : "Img/align-justify_land.svg"
             }
             alt=""
             className="main-navbar__left-img"
@@ -25,7 +27,7 @@ const Navbar = ({ landing }) => {
         </div>
         <div className="main-navbar__center-logo">
           <img
-            src={!landing ? "Img/Logo_black.svg" : "Img/Logo_white.svg"}
+            src={!landing ? "../Img/Logo_black.svg" : "Img/Logo_white.svg"}
             alt=""
             className="main-navbar__center-img"
           />
@@ -38,7 +40,7 @@ const Navbar = ({ landing }) => {
           <div className="main-navbar__user-items">
             <h4 className="main-navbar__user-items_lang">ES</h4>
             <img
-              src={!landing ? "Img/star.svg" : "Img/star_land.svg"}
+              src={!landing ? "../Img/star.svg" : "Img/star_land.svg"}
               alt=""
               className="main-navbar__star_coin"
             />

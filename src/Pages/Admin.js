@@ -9,6 +9,7 @@ import "../Styles/Admin.css";
 
 const Admin = () => {
   const [number, setNumber] = useState("");
+  const [position, setPosition] = useState();
 
   const getNumberGames = async () => {
     const numberGames = [];
@@ -17,6 +18,12 @@ const Admin = () => {
         numberGames.push({ ...game.data(), id: game.id });
       });
       setNumber(numberGames.length);
+      let cont = 0;
+      for (let index = 0; index < numberGames.length; index++) {
+        cont++;
+        // console.log(cont);
+        setPosition(cont);
+      }
     });
   };
 
@@ -62,7 +69,7 @@ const Admin = () => {
               </div>
             </div>
             <div className="Productos">
-              <Productos />
+              <Productos number={position} />
             </div>
           </div>
         </div>

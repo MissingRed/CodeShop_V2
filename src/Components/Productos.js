@@ -1,7 +1,7 @@
 import React from "react";
 import ListItemAdmin from "../Components/ListItemAdmin";
 
-const Productos = () => {
+const Productos = ({ number }) => {
   return (
     <React.Fragment>
       <div>
@@ -9,7 +9,7 @@ const Productos = () => {
           <h2>Lista de productos</h2>
 
           <div className="lista">
-            <ListItemAdmin />
+            <ListItemAdmin indice={number} />
           </div>
         </div>
       </div>

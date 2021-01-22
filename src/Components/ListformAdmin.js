@@ -6,17 +6,21 @@ import { storage } from "../Database/Base";
 const ListformAdmin = (props) => {
   const { currentUser } = useContext(AuthContext);
   const [image, setImage] = useState(null);
+  const [imageBanner, setImageBanner] = useState(null);
+
   const [, setProgress] = useState(0);
 
   const initStateValue = {
     name: "",
+    description: "",
     quantity: "",
     price: "",
     category: "",
   };
 
   const [values, setValues] = useState(initStateValue);
-  const [, setUrl] = useState("");
+  const [url, setUrl] = useState("");
+  const [url2, setUrl2] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,8 +44,16 @@ const ListformAdmin = (props) => {
     }
   };
 
+  const uploadImage1 = (e) => {
+    if (e.target.files[0]) {
+      setImageBanner(e.target.files[0]);
+    }
+  };
+
   const updateImg = () => {
-    const uploadTask = storage.ref(`images/${values.name}`).put(image);
+    const uploadTask =
+      storage.ref(`images/${values.name}`).put(image) &&
+      storage.ref(`imagesBanner/${values.name}`).put(imageBanner);
 
     uploadTask.on(
       "state_changed",
@@ -60,14 +72,23 @@ const ListformAdmin = (props) => {
           .child(values.name)
           .getDownloadURL()
           .then((url) => {
-            setUrl(url);
-            props.addOrEditLink({ ...values, url: url });
+            storage
+              .ref("imagesBanner")
+              .child(values.name)
+              .getDownloadURL()
+              .then((url2) => {
+                setUrl(url);
+                setUrl2(url2);
+                props.addOrEditLink({ ...values, url: url, urlBanner: url2 });
+              });
           });
       }
     );
   };
 
   console.log("image:", image);
+  console.log("imageBanner:", imageBanner);
+
   useEffect(() => {
     if (props.currentId === "") {
       setValues({ ...initStateValue });
@@ -95,13 +116,13 @@ const ListformAdmin = (props) => {
               onChange={handleInputChange}
               value={values.name}
             />
-            {/* <input
-              name="category"
-              placeholder="Categoria"
+            <input
+              name="description"
+              placeholder="Descripcion"
               onChange={handleInputChange}
-              value={values.category}
+              value={values.description}
               type="text"
-            ></input> */}
+            ></input>
             <input
               name="quantity"
               placeholder="Numero de unidades"
@@ -117,7 +138,9 @@ const ListformAdmin = (props) => {
               value={values.price}
               type="number"
             ></input>
+
             <input type="file" name="" id="" onChange={uploadImage} />
+            <input type="file" name="" id="" onChange={uploadImage1} />
             <select name="category" onChange={handleInputChange}>
               <option value="none">Sin Categoria</option>
               <option value="Lol">League Of Legends</option>

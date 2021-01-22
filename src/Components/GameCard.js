@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/GameCard.css";
 import { db } from "../Database/Base";
 
 const GameCard = () => {
   const [productos, SetProductos] = useState([]);
-
   const getLinks = async () => {
     db.collection("Games").onSnapshot((querySnapshot) => {
       const docs = [];
@@ -34,16 +34,17 @@ const GameCard = () => {
             <p className="main-card__product_name">{producto.name}</p>
             <p className="main-card__product_price">${producto.price}</p>
           </div>
-
-          <div className="main-card__button_Add">
-            <div className="main-card__button_circle">
-              <img
-                src="Img/plus.svg"
-                alt="add"
-                className="main-card__button_circle-img"
-              />
+          <Link to={`/Product/${producto.id}`}>
+            <div className="main-card__button_Add">
+              <div className="main-card__button_circle">
+                <img
+                  src="Img/plus.svg"
+                  alt="add"
+                  className="main-card__button_circle-img"
+                />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       ))}
     </>

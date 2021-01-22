@@ -3,7 +3,7 @@ import { db } from "../Database/Base";
 import ListformAdmin from "../Components/ListformAdmin";
 import Swal from "sweetalert2";
 
-function ListItemAdmin() {
+function ListItemAdmin({ indice }) {
   const [productos, SetProductos] = useState([]);
   const [currentId, setCurrentId] = useState("");
   const [openModal, setOpenModal] = useState(false);
@@ -99,7 +99,7 @@ function ListItemAdmin() {
         {productos.map((producto) => (
           <div className="itemAdmin" key={producto.id}>
             <div className="infove">
-              <p>1.</p>
+              <p>{indice}</p>
               <div className="imgve">
                 {/* <img src={producto.url} alt="" /> */}
               </div>
