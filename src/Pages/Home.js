@@ -5,6 +5,8 @@ import Sidebar from "../Components/Sidebar";
 import Banner from "../Components/Banner";
 import Swal from "sweetalert2";
 import GameCard from "../Components/GameCard";
+import { Link } from "react-router-dom";
+
 import { AuthContext } from "../Database/Auth";
 import { db } from "../Database/Base";
 
@@ -14,7 +16,17 @@ const Home = () => {
   const { currentUser } = useContext(AuthContext);
   const [SearchResult, setSearchResult] = useState([]);
   const [InputSearch, SetInputSearch] = useState("");
+  const [productos, SetProductos] = useState([]);
 
+  const getLinks = async () => {
+    db.collection("Games").onSnapshot((querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      SetProductos(docs);
+    });
+  };
   const handleChangeSearch = async (e) => {
     SetInputSearch(e.target.value);
 
@@ -72,7 +84,7 @@ const Home = () => {
     }
   };
 
-  const seares = () => {
+  const GameCardFilter = () => {
     var name = "";
     name = SearchResult.map((res) => (
       <div className="main-container__store_items" key={res.name}>
@@ -83,21 +95,22 @@ const Home = () => {
           <div className="main-card__container">
             <img src={res.url} className="main-card__img" alt="start" />
           </div>
-
           <div>
             <p className="main-card__product_name">{res.name}</p>
             <p className="main-card__product_price">${res.price}</p>
           </div>
 
-          <div className="main-card__button_Add">
-            <div className="main-card__button_circle">
-              <img
-                src="Img/plus.svg"
-                alt="add"
-                className="main-card__button_circle-img"
-              />
+          <Link to={`/Product/${res.id}`}>
+            <div className="main-card__button_Add">
+              <div className="main-card__button_circle">
+                <img
+                  src="Img/plus.svg"
+                  alt="add"
+                  className="main-card__button_circle-img"
+                />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     ));
@@ -113,6 +126,9 @@ const Home = () => {
         "info"
       );
     }
+
+    getLinks();
+    console.log(productos);
   }, [currentUser]);
 
   return (
@@ -128,7 +144,7 @@ const Home = () => {
             <Banner />
             <div className="main-container__store_items">
               {InputSearch ? (
-                <div className="cardSearch">{seares()}</div>
+                <div className="cardSearch">{GameCardFilter()}</div>
               ) : (
                 <GameCard />
               )}
