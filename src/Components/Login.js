@@ -29,7 +29,7 @@ const Login = ({ history }) => {
           .signInWithEmailAndPassword(email.value, password.value);
         history.push("/Home");
       } catch (error) {
-        console.log(error);
+        alert("Error al inciar sesión");
       }
     },
     [history]

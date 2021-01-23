@@ -11,7 +11,6 @@ import app from "../Database/Base.js";
 const Profile = () => {
   const { currentUser } = useContext(AuthContext);
   const [password, setPassword] = useState(false);
-  //   console.log(currentUser);
 
   const buttonVerified = () => {
     currentUser
@@ -25,7 +24,6 @@ const Profile = () => {
       })
       .catch(function (error) {
         Swal.fire("Error", "Error inesperado", "error");
-        console.log(error);
       });
   };
 

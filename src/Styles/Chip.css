@@ -21,7 +21,7 @@
 
 .main-chip__item {
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     color: rgba(0, 0, 0, 0.507);
     font-weight: bold;
     font-size: small;
@@ -40,7 +40,7 @@
 .main-chip__item_button {
     width: 150px;
     font-family: 'Poppins', sans-serif;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 0;
     background: transparent;
     outline: none;
@@ -51,6 +51,16 @@
     padding-right: 15px;
     padding-left: 15px;
     height: ; */
+}
+
+.selected{
+
+    background: black;
+}
+
+.main-chip__item_button::active {
+
+    background: red;
 }
 
 .main-chip__item>:hover {
@@ -70,7 +80,7 @@
 .main-chip__search {
     width: 30%;
     background: white;
-    border-radius: 10px;
+    border-radius: 15px;
     color: rgba(0, 0, 0, 0.507);
     font-weight: bold;
     font-size: small;
@@ -83,6 +93,7 @@
 
 .main-chip__search_input {
     width: calc(100% - 60px);
+    border-radius: 15px;
     height: auto;
     border: 0;
     outline: none;

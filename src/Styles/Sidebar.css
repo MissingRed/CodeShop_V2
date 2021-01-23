@@ -1,7 +1,7 @@
 .main-sidebar {
     position: sticky;
     /* top: calc(150px + 2rem); */
-    width: 220px;
+    width: 150px;
     height: 75vh;
 }
 

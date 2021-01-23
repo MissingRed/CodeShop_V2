@@ -11,7 +11,11 @@ const ProductGameView = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   let { id } = useParams();
-
+  const style = {
+    background: "white",
+    paddingTop: "10px",
+    paddingBottom: "10px",
+  };
   const order = {
     customer: "123456",
     total: product.price,
@@ -70,8 +74,9 @@ const ProductGameView = () => {
               ) : (
                 <div>
                   <div className="sticky-header">
-                    <Navbar />
+                    <Navbar style={style} />
                   </div>
+
                   <div className="contenido">
                     <div className="imagen">
                       <img src={product.urlBanner} alt="banner" />

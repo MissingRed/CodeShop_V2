@@ -5,13 +5,13 @@ import { AuthContext } from "../Database/Auth";
 import app from "../Database/Base.js";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ landing }) => {
+const Navbar = ({ landing, style }) => {
   const [openPerfil, setOpenPerfil] = useState(false);
   const { currentUser } = useContext(AuthContext);
 
   return (
     <>
-      <div className="main-navbar">
+      <div className="main-navbar" style={style}>
         <div className="main-navbar__group-title">
           <img
             src={

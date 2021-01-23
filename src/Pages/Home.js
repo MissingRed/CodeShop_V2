@@ -16,7 +16,7 @@ const Home = () => {
   const { currentUser } = useContext(AuthContext);
   const [SearchResult, setSearchResult] = useState([]);
   const [InputSearch, SetInputSearch] = useState("");
-  const [productos, SetProductos] = useState([]);
+  const [, SetProductos] = useState([]);
 
   const getLinks = async () => {
     db.collection("Games").onSnapshot((querySnapshot) => {
@@ -42,14 +42,11 @@ const Home = () => {
 
       user.forEach((doc) => {
         docs.push({
-          name: doc.get("name"),
-          price: doc.get("price"),
-          quantity: doc.get("quantity"),
-          url: doc.get("url"),
+          ...doc.data(),
+          id: doc.id,
         });
       });
       setSearchResult(docs);
-      SearchResult.map((res) => console.log(res.name));
     } else {
       setSearchResult([]);
     }
@@ -70,15 +67,16 @@ const Home = () => {
 
       user.forEach((doc) => {
         docs.push({
-          name: doc.get("name"),
-          price: doc.get("price"),
-          quantity: doc.get("quantity"),
-          url: doc.get("url"),
+          // name: doc.get("name"),
+          // price: doc.get("price"),
+          // quantity: doc.get("quantity"),
+          // url: doc.get("url"),
+          ...doc.data(),
+          id: doc.id,
         });
       });
 
       setSearchResult(docs);
-      // SearchResult.map((res) => console.log(res.name));
     } else {
       setSearchResult([]);
     }
@@ -87,31 +85,29 @@ const Home = () => {
   const GameCardFilter = () => {
     var name = "";
     name = SearchResult.map((res) => (
-      <div className="main-container__store_items" key={res.name}>
-        <div className="main-card">
-          <div className="main-card__favorite">
-            <img src="Img/start1.svg" alt="start" />
-          </div>
-          <div className="main-card__container">
-            <img src={res.url} className="main-card__img" alt="start" />
-          </div>
-          <div>
-            <p className="main-card__product_name">{res.name}</p>
-            <p className="main-card__product_price">${res.price}</p>
-          </div>
-
-          <Link to={`/Product/${res.id}`}>
-            <div className="main-card__button_Add">
-              <div className="main-card__button_circle">
-                <img
-                  src="Img/plus.svg"
-                  alt="add"
-                  className="main-card__button_circle-img"
-                />
-              </div>
-            </div>
-          </Link>
+      <div className="main-card" key={res.name}>
+        <div className="main-card__favorite">
+          <img src="Img/start1.svg" alt="start" />
         </div>
+        <div className="main-card__container">
+          <img src={res.url} className="main-card__img" alt="start" />
+        </div>
+        <div>
+          <p className="main-card__product_name">{res.name}</p>
+          <p className="main-card__product_price">${res.price}</p>
+        </div>
+
+        <Link to={`/Product/${res.id}`}>
+          <div className="main-card__button_Add">
+            <div className="main-card__button_circle">
+              <img
+                src="Img/plus.svg"
+                alt="add"
+                className="main-card__button_circle-img"
+              />
+            </div>
+          </div>
+        </Link>
       </div>
     ));
 
@@ -128,7 +124,6 @@ const Home = () => {
     }
 
     getLinks();
-    console.log(productos);
   }, [currentUser]);
 
   return (

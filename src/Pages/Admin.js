@@ -21,7 +21,6 @@ const Admin = () => {
       let cont = 0;
       for (let index = 0; index < numberGames.length; index++) {
         cont++;
-        // console.log(cont);
         setPosition(cont);
       }
     });

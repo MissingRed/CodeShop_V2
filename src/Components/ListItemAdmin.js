@@ -65,15 +65,6 @@ function ListItemAdmin({ indice }) {
         docs.push({ ...doc.data(), id: doc.id });
       });
       SetProductos(docs);
-      // console.log(
-      //   storage
-      //     .ref("images")
-      //     .child("google")
-      //     .getDownloadURL()
-      //     .then((url) => {
-      //       setUrl(url);
-      //     })
-      // );
     });
   };
 

@@ -45,7 +45,6 @@ const PaypalCheckoutButton = ({ order }) => {
       note_to_payer: "Contáctanos para cualquier aclaración sobre tu compra.",
     };
 
-    // console.log(payment);
     return actions.payment.create({
       payment,
     });

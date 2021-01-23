@@ -59,7 +59,7 @@ const ListformAdmin = (props) => {
         setProgress(progress);
       },
       (error) => {
-        console.log(error);
+        alert("Erro");
       },
       () => {
         storage
@@ -80,9 +80,6 @@ const ListformAdmin = (props) => {
       }
     );
   };
-
-  console.log("image:", image);
-  console.log("imageBanner:", imageBanner);
 
   useEffect(() => {
     if (props.currentId === "") {
