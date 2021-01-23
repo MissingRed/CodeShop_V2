@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Banner.css";
+import { Link } from "react-router-dom";
 
 const Banner = () => {
   return (
@@ -9,9 +10,12 @@ const Banner = () => {
           <div className="main-banner__offer_title">
             <h3>ASSASSIN'S CREED VALHALLA</h3>
             <div className="main-banner__offer_buttons">
-              <div className="main-banner__offer_button_buy">
+              <Link
+                className="main-banner__offer_button_buy"
+                to="Product/i1ycwTXDbDF9yjsZmBYD"
+              >
                 <p className="main-banner__offer_buy">Comprar Ahora</p>
-              </div>
+              </Link>
               <div className="main-banner__offer_button_buy color-black">
                 <p className="main-banner__see-review">Ver Review</p>
               </div>

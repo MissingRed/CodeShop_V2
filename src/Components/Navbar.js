@@ -3,6 +3,7 @@ import "../Styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Database/Auth";
 import app from "../Database/Base.js";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ landing }) => {
   const [openPerfil, setOpenPerfil] = useState(false);
@@ -21,9 +22,11 @@ const Navbar = ({ landing }) => {
             alt=""
             className="main-navbar__left-img"
           />
-          <h3 className="main-navbar__title">
-            {!landing ? "Tienda" : landing}
-          </h3>
+          <Link to="/Home" className="main-navbar__a">
+            <h3 className="main-navbar__title">
+              {!landing ? "Tienda" : landing}
+            </h3>
+          </Link>
         </div>
         <div className="main-navbar__center-logo">
           <img

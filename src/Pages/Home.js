@@ -43,6 +43,35 @@ const Home = () => {
     }
   };
 
+  const handleChangeFilter = async (e) => {
+    SetInputSearch(e.target.value);
+
+    if (e.target.value) {
+      const user = await db
+        .collection("Games")
+        .limit(10)
+        .where("category", ">=", e.target.value)
+        .where("category", "<=", e.target.value + "\uf8ff")
+        .get();
+
+      const docs = [];
+
+      user.forEach((doc) => {
+        docs.push({
+          name: doc.get("name"),
+          price: doc.get("price"),
+          quantity: doc.get("quantity"),
+          url: doc.get("url"),
+        });
+      });
+
+      setSearchResult(docs);
+      // SearchResult.map((res) => console.log(res.name));
+    } else {
+      setSearchResult([]);
+    }
+  };
+
   const seares = () => {
     var name = "";
     name = SearchResult.map((res) => (
@@ -90,7 +119,7 @@ const Home = () => {
     <>
       <div className="sticky-header">
         <Navbar />
-        <Chip Search={handleChangeSearch} />
+        <Chip Search={handleChangeSearch} Filter={handleChangeFilter} />
       </div>
       <div className="main-container">
         <div className="main-container__margin">

@@ -29,6 +29,7 @@
 .main-banner__offer_button_buy {
     display: flex;
     z-index: 9000;
+    text-decoration: none;
 }
 
 .main-banner__offer_button_buy p {

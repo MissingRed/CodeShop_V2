@@ -19,8 +19,8 @@ const ListformAdmin = (props) => {
   };
 
   const [values, setValues] = useState(initStateValue);
-  const [url, setUrl] = useState("");
-  const [url2, setUrl2] = useState("");
+  const [, setUrl] = useState("");
+  const [, setUrl2] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,11 +31,6 @@ const ListformAdmin = (props) => {
     e.preventDefault();
     updateImg();
     setValues({ ...initStateValue });
-  };
-
-  const getLinkById = async (id) => {
-    const doc = await db.collection(currentUser.uid).doc(id).get();
-    setValues({ ...doc.data() });
   };
 
   const uploadImage = (e) => {
@@ -93,6 +88,10 @@ const ListformAdmin = (props) => {
     if (props.currentId === "") {
       setValues({ ...initStateValue });
     } else {
+      const getLinkById = async (id) => {
+        const doc = await db.collection(currentUser.uid).doc(id).get();
+        setValues({ ...doc.data() });
+      };
       getLinkById(props.currentId);
     }
   }, [props.currentId]);

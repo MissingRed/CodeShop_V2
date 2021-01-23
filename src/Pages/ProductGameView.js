@@ -6,30 +6,11 @@ import "../Styles/ProductGameView.css";
 import PaypalCheckoutButton from "../Components/PaypalCheckoutButton";
 
 const ProductGameView = () => {
-  let { id } = useParams();
   const [product, setProduct] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
-  const getLinks = async () => {
-    setLoading(true);
-    db.collection("Games")
-      .doc(id)
-      .get()
-      .then((doc) => {
-        if (doc.exists) {
-          setProduct(doc.data());
-          setLoading(false);
-        } else {
-          setLoading(false);
-          setNotFound(true);
-        }
-      })
-      .catch((err) => {
-        setError(err);
-      });
-  };
+  let { id } = useParams();
 
   const order = {
     customer: "123456",
@@ -53,6 +34,24 @@ const ProductGameView = () => {
   };
 
   useEffect(() => {
+    const getLinks = async () => {
+      setLoading(true);
+      db.collection("Games")
+        .doc(id)
+        .get()
+        .then((doc) => {
+          if (doc.exists) {
+            setProduct(doc.data());
+            setLoading(false);
+          } else {
+            setLoading(false);
+            setNotFound(true);
+          }
+        })
+        .catch((err) => {
+          setError(err);
+        });
+    };
     getLinks();
   }, []);
 

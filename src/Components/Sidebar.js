@@ -22,48 +22,6 @@ const Sidebar = () => {
           >
             Perfil
           </NavLink>
-          <NavLink
-            to="/Card"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Tarjeta Bancaria
-          </NavLink>
-          {/* <NavLink
-            to="/Profile"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Compras realizadas
-          </NavLink>
-          <NavLink
-            to="/Profile"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Tarjeta de credito
-          </NavLink>
-          <NavLink
-            to="/Profile"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Sistema operativo
-          </NavLink>
-          <NavLink
-            to="/Profile"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Tipo de producto
-          </NavLink>
-          <NavLink
-            to="/Profile"
-            activeClassName="selectedNav"
-            className="main-sidebar__item"
-          >
-            Generos
-          </NavLink> */}
         </div>
       </div>
     </>
