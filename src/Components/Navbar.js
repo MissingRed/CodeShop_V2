@@ -35,7 +35,7 @@ const Navbar = ({ landing, style, title }) => {
             >
               <div className="sidebar-div">
                 <img
-                  src="Img/x.svg"
+                  src="../Img/x.svg"
                   alt="X"
                   onClick={() => setOpenSidebar(openPerfil)}
                   className="main-navbar__left-img"
