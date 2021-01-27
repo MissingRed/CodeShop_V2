@@ -23,7 +23,7 @@ const Purchases = () => {
           docs.push({ ...doc.data(), id: doc.id });
         });
         SetProductos(docs);
-        console.log(docs);
+        // console.log(docs);
       })
       .catch(function (error) {
         console.log("Error getting documents: ", error);
@@ -65,8 +65,10 @@ const Purchases = () => {
                         </div>
                       </div>
                       <div className="logometod">
-                        <img src="Img/paypal.svg" alt="paylogo" />
-                        <p className="code">{compra.payer.payment_method}</p>
+                        <div className="centro">
+                          <img src="Img/paypal.svg" alt="paylogo" />
+                          <p className="code">{compra.payer.payment_method}</p>
+                        </div>
                       </div>
                     </div>
                   </div>

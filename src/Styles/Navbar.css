@@ -141,6 +141,35 @@
     transition: 0.6s;
 }
 
+.sidebar-menu {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: 0.3s ease all;
+    transition: 0.3s ease all;
+    background: white;
+    z-index: 20000;
+}
+
+.sidebar-div {
+    display: flex;
+    flex-direction: column;
+    padding: 8%;
+}
+
+.menu>li>a {
+    padding: 15px 20px;
+    color: #fff;
+}
+
+.main-navbar__open {
+    display: flex;
+}
+
 @media (max-width: 600px) {
     .main-navbar__center-logo {
         display: none;
@@ -150,5 +179,9 @@
         padding-right: 5%;
         padding-top: 5%;
         padding-bottom: 5%;
+    }
+    .open {
+        -webkit-transform: translateX(300px);
+        transform: translateX(300px);
     }
 }

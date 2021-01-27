@@ -5,6 +5,11 @@
     height: 75vh;
 }
 
+.main-sidebar_mobile {
+
+    margin: 20px;
+}
+
 .main-sidebar__title {
     margin-top: 0;
     margin-bottom: 40px;

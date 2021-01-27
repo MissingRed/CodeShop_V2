@@ -21,35 +21,32 @@ const GameCard = () => {
 
   return (
     <>
-      {
-        (console.log("xd", productos),
-        productos.map((producto) => (
-          <div className="main-card" key={producto.name}>
-            <div className="main-card__favorite">
-              <img src="Img/start1.svg" alt="start" />
-            </div>
-            <div className="main-card__container">
-              <img src={producto.url} className="main-card__img" alt="start" />
-            </div>
-
-            <div className="main-card__container_product">
-              <p className="main-card__product_name">{producto.name}</p>
-              <p className="main-card__product_price">${producto.price}</p>
-            </div>
-            <Link to={`/Product/${producto.id}`}>
-              <div className="main-card__button_Add">
-                <div className="main-card__button_circle">
-                  <img
-                    src="Img/plus.svg"
-                    alt="add"
-                    className="main-card__button_circle-img"
-                  />
-                </div>
-              </div>
-            </Link>
+      {productos.map((producto) => (
+        <div className="main-card" key={producto.name}>
+          <div className="main-card__favorite">
+            <img src="Img/start1.svg" alt="start" />
           </div>
-        )))
-      }
+          <div className="main-card__container">
+            <img src={producto.url} className="main-card__img" alt="start" />
+          </div>
+
+          <div className="main-card__container_product">
+            <p className="main-card__product_name">{producto.name}</p>
+            <p className="main-card__product_price">${producto.price}</p>
+          </div>
+          <Link to={`/Product/${producto.id}`}>
+            <div className="main-card__button_Add">
+              <div className="main-card__button_circle">
+                <img
+                  src="Img/plus.svg"
+                  alt="add"
+                  className="main-card__button_circle-img"
+                />
+              </div>
+            </div>
+          </Link>
+        </div>
+      ))}
     </>
   );
 };

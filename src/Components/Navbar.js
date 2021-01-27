@@ -8,20 +8,73 @@ import { Link } from "react-router-dom";
 const Navbar = ({ landing, style }) => {
   const [openPerfil, setOpenPerfil] = useState(false);
   const { currentUser } = useContext(AuthContext);
+  const [openSidebar, setOpenSidebar] = useState(false);
 
   return (
     <>
       <div className="main-navbar" style={style}>
         <div className="main-navbar__group-title">
-          <img
-            src={
-              !landing
-                ? "../Img/align-justify.svg"
-                : "Img/align-justify_land.svg"
-            }
-            alt=""
-            className="main-navbar__left-img"
-          />
+          <div
+            onClick={() => setOpenSidebar(!openPerfil)}
+            className="main-navbar__open"
+          >
+            <img
+              src={
+                !landing
+                  ? "../Img/align-justify.svg"
+                  : "Img/align-justify_land.svg"
+              }
+              alt=""
+              className="main-navbar__left-img"
+            />
+          </div>
+
+          {openSidebar ? (
+            <div
+              className={`sidebar-menu${openSidebar === true ? " open" : ""}`}
+            >
+              <div className="sidebar-div">
+                <img
+                  src="Img/x.svg"
+                  alt="X"
+                  onClick={() => setOpenSidebar(openPerfil)}
+                  className="main-navbar__left-img"
+                />
+                {/* <button type="button" className="button small float-right">
+                  Toggle Menu
+                </button> */}
+                <div className="main-sidebar_mobile">
+                  <h3 className="main-sidebar__title">Opciones</h3>
+                  <div className="main-sidebar__pruducts">
+                    <NavLink
+                      to="/Home"
+                      activeClassName="selectedNav"
+                      className="main-sidebar__item"
+                    >
+                      Tienda
+                    </NavLink>
+                    <NavLink
+                      to="/Profile"
+                      activeClassName="selectedNav"
+                      className="main-sidebar__item"
+                    >
+                      Perfil
+                    </NavLink>
+                    <NavLink
+                      to="/Purchases"
+                      activeClassName="selectedNav"
+                      className="main-sidebar__item"
+                    >
+                      Compras
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
           <Link to="/Home" className="main-navbar__a">
             <h3 className="main-navbar__title">
               {!landing ? "Tienda" : landing}

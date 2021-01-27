@@ -105,3 +105,23 @@
     margin-bottom: 0;
     margin-left: 10px;
 }
+
+@media (max-width: 600px) {
+    .compraProd {
+        width: 100%;
+    }
+    .arriba {
+        flex-direction: column;
+    }
+    .cotenedorxd {
+        width: 100%;
+    }
+    .logometod {
+        width: 100%;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+    .centro {
+        text-align: center;
+    }
+}
