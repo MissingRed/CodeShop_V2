@@ -5,7 +5,7 @@ import { AuthContext } from "../Database/Auth";
 import app from "../Database/Base.js";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ landing, style }) => {
+const Navbar = ({ landing, style, title }) => {
   const [openPerfil, setOpenPerfil] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -76,7 +76,7 @@ const Navbar = ({ landing, style }) => {
           )}
 
           <Link to="/Home" className="main-navbar__a">
-            <h3 className="main-navbar__title">
+            <h3 className="main-navbar__title" style={title}>
               {!landing ? "Tienda" : landing}
             </h3>
           </Link>

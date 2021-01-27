@@ -5,6 +5,11 @@ import { NavLink } from "react-router-dom";
 
 const Landing = () => {
   const videoSource = "Video/video.mp4";
+
+  const style = {
+    color: "white",
+  };
+
   return (
     <>
       <div className="main-landing">
@@ -19,7 +24,7 @@ const Landing = () => {
 
         <div className="main-landing__group-video">
           <div className="main-landing__group-items">
-            <Navbar landing="CodeShop" />
+            <Navbar landing="CodeShop" title={style} />
             <div className="main-landing__group-content">
               <div className="main-landing__group-left">
                 <div>
