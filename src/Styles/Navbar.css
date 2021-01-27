@@ -152,11 +152,3 @@
         padding-bottom: 5%;
     }
 }
-
-.sticky-header {
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-    background: #e7edefc7;
-    padding-bottom: 1px;
-}

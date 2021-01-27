@@ -1,7 +1,7 @@
 .main-sidebar {
     position: sticky;
     /* top: calc(150px + 2rem); */
-    width: 150px;
+    width: 200px;
     height: 75vh;
 }
 
@@ -16,19 +16,17 @@
 }
 
 .main-sidebar__item {
-    font-size: 15px;
+    /* font-size: 15px; */
     margin-bottom: 50px;
-    font-weight: bold;
-    color: rgba(0, 0, 0, 0.582);
+    font-weight: 500;
+    color: #96A0A5;
     text-decoration: none;
-}
-
-.main-sidebar__selected {
-    color: black;
 }
 
 .selectedNav {
     color: black;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
 }
 
 @media (max-width: 600px) {

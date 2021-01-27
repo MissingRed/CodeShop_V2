@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import ReactDOM from "react-dom";
 import paypal from "paypal-checkout";
+import { db } from "../Database/Base";
+import Swal from "sweetalert2";
+import { AuthContext } from "../Database/Auth";
 
 const PaypalCheckoutButton = ({ order }) => {
+  const { currentUser } = useContext(AuthContext);
+
   const paypalConf = {
     currency: "USD",
     env: "sandbox",
@@ -26,6 +31,20 @@ const PaypalCheckoutButton = ({ order }) => {
   };
 
   const PayPalButton = paypal.Button.driver("react", { React, ReactDOM });
+
+  const PostTransactionsPaypal = async (linkObject) => {
+    try {
+      await db.collection("transactions").doc().set(linkObject);
+    } catch (error) {
+      console.log(error);
+    }
+    Swal.fire({
+      icon: "success",
+      title: "¡Compra realizada con exito!",
+      text: "Gracias por comprar en CodeShop",
+      footer: "<a href=../Purchases>Ver Detalles de la compra </a>",
+    });
+  };
 
   const payment = (data, actions) => {
     const payment = {
@@ -56,6 +75,7 @@ const PaypalCheckoutButton = ({ order }) => {
       .then((response) => {
         console.log(response);
         alert(`El Pago fue procesado correctamente, ID: ${response.id}`);
+        PostTransactionsPaypal({ ...response, uid: currentUser.uid });
       })
       .catch((error) => {
         console.log(error);

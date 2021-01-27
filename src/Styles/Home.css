@@ -30,10 +30,9 @@
     /* grid-template-rows: 1fr, 1fr; */
     /* height: 150px;
     max-height: 150px; */
-    position: sticky;
     top: 0;
     z-index: 10000;
-    background: #e7edef;
+    background: #ebf0f4;
 }
 
 @media (max-width: 600px) {

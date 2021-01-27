@@ -6,6 +6,7 @@ import Home from "./Pages/Home";
 import Profile from "./Pages/Profile";
 import Admin from "./Pages/Admin";
 import ProductGameView from "./Pages/ProductGameView";
+import Purchases from "./Pages/Purchases";
 
 import { AuthProvider } from "./Database/Auth";
 import PrivateRoute from "./Components/PrivateRoute";
@@ -21,14 +22,13 @@ const App = () => {
               <Route exact path="/Login" component={Login_Register} />
               <PrivateRoute exact path="/Home" component={Home} />
               <PrivateRoute exact path="/Profile" component={Profile} />
-              {/* <PrivateRoute exact path="/Card" component={Card} /> */}
               <PrivateRoute exact path="/Admin" component={Admin} />
+              <PrivateRoute exact path="/Purchases" component={Purchases} />
               <PrivateRoute
                 exact
                 path="/Product/:id"
                 component={ProductGameView}
               />
-              ;
             </Switch>
           </BrowserRouter>
         </AuthProvider>

@@ -124,6 +124,7 @@ const Home = () => {
     }
 
     getLinks();
+    // console.log(prod);
   }, [currentUser]);
 
   return (

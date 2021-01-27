@@ -45,21 +45,15 @@
     background: transparent;
     outline: none;
     cursor: pointer;
-    font-weight: 600;
-    color: rgba(0, 0, 0, .507);
-    /* padding: 10px;
-    padding-right: 15px;
-    padding-left: 15px;
-    height: ; */
+    color: #96A0A5;
+    font-weight: 500;
 }
 
-.selected{
-
+.selected {
     background: black;
 }
 
 .main-chip__item_button::active {
-
     background: red;
 }
 
@@ -75,6 +69,7 @@
 .icon1 {
     padding: 10px;
     text-align: center;
+    width: 25px;
 }
 
 .main-chip__search {

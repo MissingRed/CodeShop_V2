@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../Styles/Chip.css";
 
 const Chip = ({ Search, Filter }) => {

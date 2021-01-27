@@ -7,9 +7,11 @@
 .main-banner__offer {
     width: 70%;
     background-color: white;
-    /* margin: 10px; */
     border-radius: 20px;
     overflow: hidden;
+    /* box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.363);
+    backdrop-filter: saturate(120%) blur(40px);
+    -webkit-backdrop-filter: saturate(120%) blur(90px); */
 }
 
 .main-banner__offer_title {
@@ -35,7 +37,7 @@
 .main-banner__offer_button_buy p {
     width: 100%;
     font-size: 15px;
-    background: #E7EDEF;
+    background: #ebf0f4;
     padding: 10px;
     color: black;
     font-weight: bold;
@@ -62,7 +64,7 @@
 .main-banner__offer_button_buy.color-black p {
     background: black;
     color: white;
-    border: 3px solid #E7EDEF;
+    border: 2px solid #E7EDEF;
 }
 
 .main-banner__offer video {
@@ -121,7 +123,7 @@
     .main-banner__offer {
         width: 100%;
     }
-    .main-banner__offer_title{
+    .main-banner__offer_title {
         font-size: x-large;
     }
 }

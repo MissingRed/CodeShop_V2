@@ -1,0 +1,107 @@
+.compraProd {
+    margin-top: 35px;
+    width: 80%;
+    background: white;
+    border-radius: 10px;
+}
+
+.arriba {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e3e4e6;
+    padding: 20px;
+}
+
+.cotenedorxd {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+}
+
+.fecha p, .total p {
+    margin: 0;
+    color: #373737;
+}
+
+.fecha h4, .total h4 {
+    margin-top: 5px;
+    margin-bottom: 0;
+    color: #373737;
+}
+
+.code {
+    margin: 0;
+}
+
+.abajo {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.abajo p {
+    margin: 0;
+    color: #373737;
+}
+
+.detalles button {
+    border: 0;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(39, 107, 233);
+    width: 100%;
+}
+
+.detalles p {
+    margin-bottom: 15px;
+    font-size: smaller;
+}
+
+.logometod {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logometod img {
+    width: 30px;
+}
+
+.logometod p {
+    font-size: smaller;
+}
+
+.money {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.money img {
+    width: 30px;
+    margin-left: 5px;
+}
+
+.name {
+    color: #00af91;
+    margin: 0;
+}
+
+.nuevo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.nuevo img {
+    width: 15px;
+}
+
+.nuevo p {
+    margin-bottom: 0;
+    margin-left: 10px;
+}

@@ -22,6 +22,13 @@ const Sidebar = () => {
           >
             Perfil
           </NavLink>
+          <NavLink
+            to="/Purchases"
+            activeClassName="selectedNav"
+            className="main-sidebar__item"
+          >
+            Compras
+          </NavLink>
         </div>
       </div>
     </>
