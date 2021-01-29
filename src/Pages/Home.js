@@ -92,7 +92,7 @@ const Home = () => {
         <div className="main-card__container">
           <img src={res.url} className="main-card__img" alt="start" />
         </div>
-        <div>
+        <div className="main-card__container_product">
           <p className="main-card__product_name">{res.name}</p>
           <p className="main-card__product_price">${res.price}</p>
         </div>
@@ -139,11 +139,7 @@ const Home = () => {
           <div className="main-contianer__store">
             <Banner />
             <div className="main-container__store_items">
-              {InputSearch ? (
-                <div className="cardSearch">{GameCardFilter()}</div>
-              ) : (
-                <GameCard />
-              )}
+              {InputSearch ? GameCardFilter() : <GameCard />}
             </div>
           </div>
         </div>
