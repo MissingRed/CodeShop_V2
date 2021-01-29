@@ -5,7 +5,7 @@ import { db } from "../Database/Base";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Database/Auth";
 
-const PaypalCheckoutButton = ({ order }) => {
+const PaypalCheckoutButton = ({ order, img }) => {
   const { currentUser } = useContext(AuthContext);
 
   const paypalConf = {
@@ -73,9 +73,7 @@ const PaypalCheckoutButton = ({ order }) => {
     return actions.payment
       .execute()
       .then((response) => {
-        console.log(response);
-        alert(`El Pago fue procesado correctamente, ID: ${response.id}`);
-        PostTransactionsPaypal({ ...response, uid: currentUser.uid });
+        PostTransactionsPaypal({ ...response, uid: currentUser.uid, img: img });
       })
       .catch((error) => {
         console.log(error);

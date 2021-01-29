@@ -4,13 +4,13 @@ import Chip from "../Components/Chip";
 import Sidebar from "../Components/Sidebar";
 import { db } from "../Database/Base";
 import { AuthContext } from "../Database/Auth";
+import { Link } from "react-router-dom";
 
 import "../Styles/Purchases.css";
 
 const Purchases = () => {
-  // const [productos, SetProductos] = useState([]);
   const { currentUser } = useContext(AuthContext);
-  const [productos, SetProductos] = useState([]);
+  const [compras, SetCompras] = useState([]);
 
   const getLinks = async () => {
     db.collection("transactions")
@@ -22,7 +22,7 @@ const Purchases = () => {
           // doc.data() is never undefined for query doc snapshots
           docs.push({ ...doc.data(), id: doc.id });
         });
-        SetProductos(docs);
+        SetCompras(docs);
         // console.log(docs);
       })
       .catch(function (error) {
@@ -46,7 +46,7 @@ const Purchases = () => {
           <div className="main-contianer__store">
             <h2>Compras realizadas</h2>
 
-            {productos.map((compra) => (
+            {compras.map((compra) => (
               <div key={compra.id} className="compraProd">
                 <div className="comp">
                   <div>
@@ -74,15 +74,23 @@ const Purchases = () => {
                   </div>
                   <div className="abajo">
                     <div className="later">
-                      <h4 className="name">
-                        {compra.transactions[0].item_list.items[0].name}
-                      </h4>
-                      <p>1 un ${compra.transactions[0].amount.total}</p>
+                      <img src={compra.img} alt="" />
+                      <div className="infocomp">
+                        <h4 className="name">
+                          {compra.transactions[0].item_list.items[0].name}
+                        </h4>
+                        <p>1 un ${compra.transactions[0].amount.total}</p>
+                      </div>
                     </div>
                     <div className="detalles">
                       <div className="nuevo">
                         <img src="Img/refresh.svg" alt="refresh" />
-                        <p>Hacer pedido de nuevo</p>
+                        <Link
+                          className="link"
+                          to={`/Product/${compra.transactions[0].item_list.items[0].sku}`}
+                        >
+                          Hacer pedido de nuevo
+                        </Link>
                       </div>
                       <button>Ver detalles del pedido</button>
                     </div>

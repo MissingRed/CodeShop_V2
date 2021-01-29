@@ -10,7 +10,9 @@ const ProductGameView = () => {
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+
   let { id } = useParams();
+
   const style = {
     background: "white",
     paddingTop: "10px",
@@ -21,7 +23,7 @@ const ProductGameView = () => {
     total: product.price,
     items: [
       {
-        sku: "112",
+        sku: product.id,
         name: product.name,
         price: product.price,
         quantity: 1,
@@ -45,7 +47,7 @@ const ProductGameView = () => {
         .get()
         .then((doc) => {
           if (doc.exists) {
-            setProduct(doc.data());
+            setProduct({ ...doc.data(), id: doc.id });
             setLoading(false);
           } else {
             setLoading(false);
@@ -101,7 +103,10 @@ const ProductGameView = () => {
                               <p>- Incluye guía paso a paso</p>
                             </div>
 
-                            <PaypalCheckoutButton order={order} />
+                            <PaypalCheckoutButton
+                              order={order}
+                              img={product.url}
+                            />
                           </div>
                         </div>
                       </div>

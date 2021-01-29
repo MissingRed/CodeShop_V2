@@ -3,6 +3,7 @@
     width: 80%;
     background: white;
     border-radius: 10px;
+    margin-bottom: 30px;
 }
 
 .arriba {
@@ -101,9 +102,32 @@
     width: 15px;
 }
 
-.nuevo p {
-    margin-bottom: 0;
-    margin-left: 10px;
+.centro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+    font-size: small;
+    margin-left: 5px;
+}
+
+.link:hover {
+    color: rgb(39, 107, 233);
+}
+
+.later {
+    display: flex;
+    align-items: center;
+}
+
+.later img {
+    width: 60px;
+    border-radius: 5px;
+    margin-right: 15px;
 }
 
 @media (max-width: 600px) {
@@ -115,13 +139,34 @@
     }
     .cotenedorxd {
         width: 100%;
+        flex-direction: column;
     }
     .logometod {
         width: 100%;
         align-items: flex-start;
         margin-top: 15px;
     }
+    .total {
+        margin-top: 20px;
+    }
+    .money {
+        justify-content: flex-start;
+    }
     .centro {
         text-align: center;
     }
+    .abajo {
+        flex-direction: column;
+    }
+    .detalles {
+        margin-top: 30px;
+        width: 100%;
+    }
+    .nuevo {
+        justify-content: center
+    }
+    .logometod {
+        align-items: flex-end;
+    }
+
 }
