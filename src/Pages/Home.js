@@ -92,7 +92,7 @@ const Home = () => {
         <div className="main-card__container">
           <img src={res.url} className="main-card__img" alt="start" />
         </div>
-        <div className="main-card__container_product">
+        <div>
           <p className="main-card__product_name">{res.name}</p>
           <p className="main-card__product_price">${res.price}</p>
         </div>
@@ -129,7 +129,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="sticky-header">
+      {/* <div className="sticky-header">
         <Navbar />
         <Chip Search={handleChangeSearch} Filter={handleChangeFilter} />
       </div>
@@ -139,8 +139,31 @@ const Home = () => {
           <div className="main-contianer__store">
             <Banner />
             <div className="main-container__store_items">
-              {InputSearch ? GameCardFilter() : <GameCard />}
+              {InputSearch ? (
+                <div className="cardSearch">{GameCardFilter()}</div>
+              ) : (
+                <GameCard />
+              )}
             </div>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="grid">
+        <div className="header">
+          <Navbar />
+          <Chip />
+        </div>
+
+        <div className="sidebar">
+          <div className="hola">
+            <Sidebar />
+          </div>
+        </div>
+        <div className="section">
+          <Banner />
+          <div className="grid-gamecard">
+            <GameCard />
           </div>
         </div>
       </div>

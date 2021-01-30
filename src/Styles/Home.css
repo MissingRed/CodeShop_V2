@@ -9,13 +9,13 @@
 .main-container__margin {
     display: flex;
     width: 100%;
-    height: 75vh;
+    height: auto;
     /* margin-left: 195px; */
 }
 
 .main-contianer__store {
     width: 100%;
-    height: 100%;
+    height: 50%;
 }
 
 .main-container__store_items {
@@ -31,6 +31,7 @@
     /* grid-template-rows: 1fr, 1fr; */
     /* height: 150px;
     max-height: 150px; */
+    position: sticky;
     top: 0;
     z-index: 10000;
     background: #ebf0f4;
@@ -43,4 +44,63 @@
         padding-top: 5%;
         padding-bottom: 5%;
     }
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "header header" "chip chip" "sidebar section";
+    grid-template-rows: 80px 80px 1fr;
+    grid-template-columns: 10% 1fr;
+    grid-gap: 20px;
+    height: 100vh;
+}
+
+.header {
+    /* background: #b6b6b6; */
+    grid-area: header;
+    padding-left: var(--padding_web);
+    padding-right: var(--padding_web);
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+}
+
+.chip {
+    /* background: #707070; */
+    grid-area: chip;
+    padding-left: var(--padding_web);
+    padding-right: var(--padding_web);
+    position: sticky;
+    top: 100px;
+    z-index: 10000;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    /* position: sticky;
+    top: 200px; */
+}
+
+.hola {
+    position: sticky;
+    top: 200px;
+    z-index: 10000;
+    /* background: #C9BFBF; */
+    padding-left: var(--padding_web);
+    padding-right: var(--padding_web);
+}
+
+.section {
+    /* background: #ABABAB; */
+    grid-area: section;
+    padding-right: var(--padding_web);
+}
+
+.grid-gamecard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, auto));
+    grid-gap: 70px;
+    margin-top: 50px;
+    /* align-content: space-around; */
+    justify-content: space-between;
 }

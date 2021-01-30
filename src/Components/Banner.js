@@ -12,7 +12,7 @@ const Banner = () => {
             <div className="main-banner__offer_buttons">
               <Link
                 className="main-banner__offer_button_buy"
-                to="Product/i1ycwTXDbDF9yjsZmBYD"
+                to="Product/pszTHeE5SNwE5QD6r7hV"
               >
                 <p className="main-banner__offer_buy">Comprar Ahora</p>
               </Link>

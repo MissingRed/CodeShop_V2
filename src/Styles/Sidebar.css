@@ -1,12 +1,10 @@
-.main-sidebar {
-    position: sticky;
-    /* top: calc(150px + 2rem); */
+/* .main-sidebar {
+
     width: 200px;
-    height: 75vh;
-}
+    height: auto;
+} */
 
 .main-sidebar_mobile {
-
     margin: 20px;
 }
 

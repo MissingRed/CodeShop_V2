@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useRef } from "react";
 import "../Styles/Navbar.css";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../Database/Auth";
@@ -9,6 +9,16 @@ const Navbar = ({ landing, style, title }) => {
   const [openPerfil, setOpenPerfil] = useState(false);
   const { currentUser } = useContext(AuthContext);
   const [openSidebar, setOpenSidebar] = useState(false);
+  const sidebarMobile = useRef();
+
+  const handleClose = () => {
+    sidebarMobile.current.style.animation = "animation_nav_reverse 0.5s";
+    sidebarMobile.current.addEventListener("animationend", () =>
+      setOpenSidebar(false)
+    );
+  };
+
+  const handleOpen = () => {};
 
   return (
     <>
@@ -30,14 +40,12 @@ const Navbar = ({ landing, style, title }) => {
           </div>
 
           {openSidebar ? (
-            <div
-              className={`sidebar-menu${openSidebar === true ? " open" : ""}`}
-            >
+            <div className="sidebar-menu" ref={sidebarMobile}>
               <div className="sidebar-div">
                 <img
                   src="../Img/x.svg"
                   alt="X"
-                  onClick={() => setOpenSidebar(openPerfil)}
+                  onClick={handleClose}
                   className="main-navbar__left-img"
                 />
                 {/* <button type="button" className="button small float-right">
