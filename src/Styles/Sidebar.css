@@ -1,8 +1,8 @@
-/* .main-sidebar {
-
-    width: 200px;
-    height: auto;
-} */
+.main-sidebar {
+    width: 100%;
+    height: 100%;
+    padding: 20px 30px 20px 30px;
+}
 
 .main-sidebar_mobile {
     margin: 20px;
@@ -30,10 +30,4 @@
     color: black;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
-}
-
-@media (max-width: 600px) {
-    .main-sidebar {
-        display: none;
-    }
 }

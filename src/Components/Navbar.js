@@ -18,8 +18,6 @@ const Navbar = ({ landing, style, title }) => {
     );
   };
 
-  const handleOpen = () => {};
-
   return (
     <>
       <div className="main-navbar" style={style}>

@@ -63,14 +63,18 @@ const Profile = () => {
 
   return (
     <>
-      <div className="sticky-header">
-        <Navbar />
-        <Chip />
-      </div>
-      <div className="main-container">
-        <div className="main-container__margin">
+      <div className="grid">
+        <div className="header">
+          <Navbar />
+        </div>
+        <div className="chip">
+          <Chip />
+        </div>
+        <div className="sidebar">
           <Sidebar />
-          <div className="main-contianer__store">
+        </div>
+        <div className="section">
+          <div className="primary">
             <h2>Perfil</h2>
             <div className="profile-info">
               <div className="dataProfile">

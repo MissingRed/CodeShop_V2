@@ -36,14 +36,18 @@ const Purchases = () => {
 
   return (
     <>
-      <div className="sticky-header">
-        <Navbar />
-        <Chip />
-      </div>
-      <div className="main-container">
-        <div className="main-container__margin">
+      <div className="grid">
+        <div className="header">
+          <Navbar />
+        </div>
+        <div className="chip">
+          <Chip />
+        </div>
+        <div className="sidebar">
           <Sidebar />
-          <div className="main-contianer__store">
+        </div>
+        <div className="section">
+          <div className="primary">
             <h2>Compras realizadas</h2>
 
             {compras.map((compra) => (
@@ -98,16 +102,6 @@ const Purchases = () => {
                 </div>
               </div>
             ))}
-            {/* {transactions.map((compras) => {
-              <p>{compras.id}</p>;
-            })} */}
-            {/* <p>{productos.create_time}</p> */}
-            {/* <h4>Articulo</h4> */}
-            {/* <p>{productos.transactions[0].item_list.items[0].name}</p> */}
-            {/* <h4>Tipo</h4>
-            <p>{productos.payer.payment_method}</p>
-            <h4>Total</h4>
-            <p>${productos.transactions[0].amount.total}</p> */}
           </div>
         </div>
       </div>

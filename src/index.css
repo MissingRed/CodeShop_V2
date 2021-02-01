@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
- 
-*{
+* {
     box-sizing: border-box;
-} 
+}
 
-:root{
+:root {
     --padding_web: 2rem;
 }
 
@@ -13,7 +12,6 @@ body {
     padding: 0;
     background: #ebf0f4;
     font-family: 'Poppins', sans-serif;
-    
 }
 
 button {

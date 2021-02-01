@@ -2,10 +2,11 @@ import React, { useEffect, useContext, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Chip from "../Components/Chip";
 import Sidebar from "../Components/Sidebar";
-import Banner from "../Components/Banner";
 import Swal from "sweetalert2";
 import GameCard from "../Components/GameCard";
 import { Link } from "react-router-dom";
+
+import Banner from "../Components/Banner";
 
 import { AuthContext } from "../Database/Auth";
 import { db } from "../Database/Base";
@@ -152,18 +153,19 @@ const Home = () => {
       <div className="grid">
         <div className="header">
           <Navbar />
-          <Chip />
         </div>
-
+        <div className="chip">
+          <Chip Search={handleChangeSearch} Filter={handleChangeFilter} />
+        </div>
         <div className="sidebar">
-          <div className="hola">
-            <Sidebar />
-          </div>
+          <Sidebar />
         </div>
         <div className="section">
-          <Banner />
-          <div className="grid-gamecard">
-            <GameCard />
+          <div className="primary">
+            <Banner />
+            <div className="main-container__store_items">
+              {InputSearch ? GameCardFilter() : <GameCard />}
+            </div>
           </div>
         </div>
       </div>

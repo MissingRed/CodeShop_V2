@@ -8,7 +8,8 @@
     padding-right: 2%;
     padding-top: 1%;
     padding-bottom: 1%; */
-    background: #ebf0f4;
+    /* background: red; */
+    padding: 20px 30px 20px 30px;
 }
 
 .main-navbar__a {
@@ -66,7 +67,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 .main-navbar__modal-user_image {
@@ -79,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 40px;
+    /* height: 40px; */
     /* width: 8%; */
 }
 
@@ -88,7 +88,9 @@
 }
 
 .main-navbar__user-items_lang, .main-navbar__user_image, .main-navbar__star_coin {
-    margin: 20px;
+    margin: 0;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .main-navbar__user_image {
@@ -154,7 +156,7 @@
     -webkit-transition: 0.3s ease all;
     transition: 0.3s ease all;
     background: white;
-    z-index: 80000;
+    z-index: 120000;
     animation: animation_nav 0.5s forwards;
 }
 
@@ -176,12 +178,6 @@
 @media (max-width: 600px) {
     .main-navbar__center-logo {
         display: none;
-    }
-    .main-navbar {
-        padding-left: 5%;
-        padding-right: 5%;
-        padding-top: 5%;
-        padding-bottom: 5%;
     }
 }
 
