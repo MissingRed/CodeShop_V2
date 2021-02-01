@@ -116,14 +116,15 @@ const Home = () => {
   };
 
   useEffect(() => {
-    if (!currentUser.emailVerified) {
-      Swal.fire(
-        "Email no verificado!",
-        "Por favor verifica tu Email en Perfil para realizar compras",
-        "info"
-      );
+    if (currentUser) {
+      if (!currentUser.emailVerified) {
+        Swal.fire(
+          "Email no verificado!",
+          "Por favor verifica tu Email en Perfil para realizar compras",
+          "info"
+        );
+      }
     }
-
     getLinks();
     // console.log(prod);
   }, [currentUser]);

@@ -32,43 +32,49 @@ const Admin = () => {
 
   return (
     <>
-      <div className="sticky-header">
-        <Navbar />
-        <Chip />
-      </div>
-      <div className="main-container">
-        <div className="main-container__margin">
+      <div className="grid">
+        <div className="header">
+          <Navbar />
+        </div>
+        <div className="chip">
+          <Chip />
+        </div>
+        <div className="sidebar">
           <Sidebar />
-          <div className="main-contianer__store">
-            <h2>Admin</h2>
-            <div className="board">
-              <div className="generalInfo">
-                <div className="box sold">
-                  <h4>0</h4>
-                  <p>Productos Vendidos</p>
-                  <div className="cantidad">
-                    <img src="Img/shopping-bag.svg" alt="bag" />
+        </div>
+        <div className="section">
+          <div className="primary">
+            <div className="main-contianer__store">
+              <h2>Admin</h2>
+              <div className="board">
+                <div className="generalInfo">
+                  <div className="box sold">
+                    <h4>0</h4>
+                    <p>Productos Vendidos</p>
+                    <div className="cantidad">
+                      <img src="Img/shopping-bag.svg" alt="bag" />
+                    </div>
                   </div>
-                </div>
-                <div className="box active">
-                  <h4>{number}</h4>
-                  <p>Productos Activos</p>
-                  <div className="cantidad">
-                    <img src="Img/check-circle.svg" alt="check" />
+                  <div className="box active">
+                    <h4>{number}</h4>
+                    <p>Productos Activos</p>
+                    <div className="cantidad">
+                      <img src="Img/check-circle.svg" alt="check" />
+                    </div>
                   </div>
-                </div>
-                <div className="box inactive">
-                  <h4>0</h4>
-                  <p>Productos Inactivos</p>
+                  <div className="box inactive">
+                    <h4>0</h4>
+                    <p>Productos Inactivos</p>
 
-                  <div className="cantidad">
-                    <img src="Img/x-circle.svg" alt="x" />
+                    <div className="cantidad">
+                      <img src="Img/x-circle.svg" alt="x" />
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="Productos">
-              <Productos number={position} />
+              <div className="Productos">
+                <Productos number={position} />
+              </div>
             </div>
           </div>
         </div>

@@ -15,8 +15,6 @@ const ProductGameView = () => {
 
   const style = {
     background: "white",
-    paddingTop: "10px",
-    paddingBottom: "10px",
   };
   const order = {
     customer: "123456",
@@ -68,7 +66,10 @@ const ProductGameView = () => {
       ) : (
         <>
           {loading ? (
-            <p>Cargando...</p>
+            <div className="center">
+              <img src="../Img/loading.gif" alt="load" />
+              <h1>Cargando...</h1>
+            </div>
           ) : (
             <>
               {error ? (

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import app from "./Base.js";
+import "../Styles/Loading.css";
 export const AuthContext = React.createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -14,7 +15,14 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   if (pending) {
-    return <>Cargando...</>;
+    return (
+      <>
+        <div className="center">
+          <img src="Img/loading.gif" alt="load" />
+          <h1>Cargando...</h1>
+        </div>
+      </>
+    );
   }
 
   return (

@@ -7,7 +7,6 @@ const Productos = ({ number }) => {
       <div>
         <div className="store">
           <h2>Lista de productos</h2>
-
           <div className="lista">
             <ListItemAdmin indice={number} />
           </div>
