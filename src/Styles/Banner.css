@@ -21,7 +21,7 @@
     z-index: 5000;
 }
 
-.main-banner__offer_title h3 {
+.main-banner__offer_title_h3 {
     margin: 10px;
     margin-left: 30px;
     margin-top: 25px;
@@ -114,7 +114,6 @@
 }
 
 @media (max-width: 1100px) {
-   
     .main-banner__video {
         display: none;
     }

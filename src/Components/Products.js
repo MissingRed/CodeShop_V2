@@ -1,9 +1,9 @@
 import React from "react";
-import ListItemAdmin from "../Components/ListItemAdmin";
+import ListItemAdmin from "./ListItemAdmin";
 
-const Productos = ({ number }) => {
+const Products = ({ number }) => {
   return (
-    <React.Fragment>
+    <>
       <div>
         <div className="store">
           <h2>Lista de productos</h2>
@@ -12,8 +12,8 @@ const Productos = ({ number }) => {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
-export default Productos;
+export default Products;

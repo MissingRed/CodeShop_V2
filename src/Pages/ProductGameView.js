@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../Database/Base";
 import Navbar from "../Components/Navbar";
 import "../Styles/ProductGameView.css";
 import PaypalCheckoutButton from "../Components/PaypalCheckoutButton";
+import { AuthContext } from "../Database/Auth";
 
 const ProductGameView = () => {
+  const { currentUser } = useContext(AuthContext);
+
   const [product, setProduct] = useState({});
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -103,11 +106,14 @@ const ProductGameView = () => {
                               <p>- Entrega inmediata</p>
                               <p>- Incluye guía paso a paso</p>
                             </div>
-
-                            <PaypalCheckoutButton
-                              order={order}
-                              img={product.url}
-                            />
+                            {currentUser ? (
+                              <PaypalCheckoutButton
+                                order={order}
+                                img={product.url}
+                              />
+                            ) : (
+                              <p>Por favor inicia sesion para poder comprar</p>
+                            )}
                           </div>
                         </div>
                       </div>

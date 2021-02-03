@@ -8,7 +8,9 @@ const Banner = () => {
       <div className="main-banner">
         <div className="main-banner__offer">
           <div className="main-banner__offer_title">
-            <h3>ASSASSIN'S CREED VALHALLA</h3>
+            <h3 className="main-banner__offer_title_h3">
+              ASSASSIN'S CREED VALHALLA
+            </h3>
             <div className="main-banner__offer_buttons">
               <Link
                 className="main-banner__offer_button_buy"

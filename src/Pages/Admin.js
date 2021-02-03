@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import Chip from "../Components/Chip";
-import Productos from "../Components/Productos";
+import Products from "../Components/Products";
 import { db } from "../Database/Base";
 
 import "../Styles/Admin.css";
@@ -73,7 +73,7 @@ const Admin = () => {
                 </div>
               </div>
               <div className="Productos">
-                <Productos number={position} />
+                <Products number={position} />
               </div>
             </div>
           </div>

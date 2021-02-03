@@ -13,6 +13,8 @@ const Purchases = () => {
   const [compras, SetCompras] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+  const [empty, setEmpty] = useState(false);
 
   const getLinks = async () => {
     db.collection("transactions")
@@ -31,10 +33,13 @@ const Purchases = () => {
           // doc.data() is never undefined for query doc snapshots
         });
         SetCompras(docs);
+        setLoading(false);
+        // setEmpty(true);
         // console.log(docs);
       })
       .catch(function (error) {
         console.log("Error getting documents: ", error);
+        setError(error);
       });
   };
 
@@ -68,67 +73,93 @@ const Purchases = () => {
                   </div>
                 ) : (
                   <>
-                    {compras.map((compra) => (
-                      <div key={compra.id} className="compraProd">
-                        <div className="comp">
-                          <div>
-                            <div className="arriba">
-                              <div className="cotenedorxd">
-                                <div className="fecha">
-                                  <p>FECHA DE COMPRA</p>
-                                  <h4>{compra.create_time}</h4>
-                                </div>
-                                <div className="total">
-                                  <p>TOTAL</p>
-                                  <div className="money">
-                                    <h4>
-                                      ${compra.transactions[0].amount.total} USD
-                                    </h4>
-                                    <img src="Img/money.png" alt="" />
+                    {error ? (
+                      <p>Error</p>
+                    ) : (
+                      <>
+                        {empty ? (
+                          <p>Vacio</p>
+                        ) : (
+                          <>
+                            {compras.map((compra) => (
+                              <div key={compra.id} className="compraProd">
+                                <div className="comp">
+                                  <div>
+                                    <div className="arriba">
+                                      <div className="cotenedorxd">
+                                        <div className="fecha">
+                                          <p>FECHA DE COMPRA</p>
+                                          <h4>{compra.create_time}</h4>
+                                        </div>
+                                        <div className="total">
+                                          <p>TOTAL</p>
+                                          <div className="money">
+                                            <h4>
+                                              $
+                                              {
+                                                compra.transactions[0].amount
+                                                  .total
+                                              }{" "}
+                                              USD
+                                            </h4>
+                                            <img src="Img/money.png" alt="" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div className="logometod">
+                                        <div className="centro">
+                                          <img
+                                            src="Img/paypal.svg"
+                                            alt="paylogo"
+                                          />
+                                          <p className="code">
+                                            {compra.payer.payment_method}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div className="abajo">
+                                    <div className="later">
+                                      <img src={compra.img} alt="" />
+                                      <div className="infocomp">
+                                        <h4 className="name">
+                                          {
+                                            compra.transactions[0].item_list
+                                              .items[0].name
+                                          }
+                                        </h4>
+                                        <p>
+                                          1 un $
+                                          {compra.transactions[0].amount.total}
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <div className="detalles">
+                                      <div className="nuevo">
+                                        <img
+                                          src="Img/refresh.svg"
+                                          alt="refresh"
+                                        />
+                                        <Link
+                                          className="link"
+                                          to={`/Product/${compra.transactions[0].item_list.items[0].sku}`}
+                                        >
+                                          Hacer pedido de nuevo
+                                        </Link>
+                                      </div>
+                                      <Link to={`/Purchases/${compra.id}`}>
+                                        Ver detalles del pedido
+                                      </Link>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                              <div className="logometod">
-                                <div className="centro">
-                                  <img src="Img/paypal.svg" alt="paylogo" />
-                                  <p className="code">
-                                    {compra.payer.payment_method}
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="abajo">
-                            <div className="later">
-                              <img src={compra.img} alt="" />
-                              <div className="infocomp">
-                                <h4 className="name">
-                                  {
-                                    compra.transactions[0].item_list.items[0]
-                                      .name
-                                  }
-                                </h4>
-                                <p>
-                                  1 un ${compra.transactions[0].amount.total}
-                                </p>
-                              </div>
-                            </div>
-                            <div className="detalles">
-                              <div className="nuevo">
-                                <img src="Img/refresh.svg" alt="refresh" />
-                                <Link
-                                  className="link"
-                                  to={`/Product/${compra.transactions[0].item_list.items[0].sku}`}
-                                >
-                                  Hacer pedido de nuevo
-                                </Link>
-                              </div>
-                              <button>Ver detalles del pedido</button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                            ))}
+                          </>
+                        )}
+                      </>
+                    )}
                   </>
                 )}
               </>

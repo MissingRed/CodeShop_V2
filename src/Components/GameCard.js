@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/GameCard.css";
 import { db } from "../Database/Base";
+import { AuthContext } from "../Database/Auth";
 
 const GameCard = () => {
   const [productos, SetProductos] = useState([]);
   const [notFound, setNotFound] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const [favorites, setFavorites] = useState([]);
+
+  const { currentUser } = useContext(AuthContext);
 
   const getLinks = async () => {
     setLoading(true);
@@ -26,7 +32,32 @@ const GameCard = () => {
     });
   };
 
+  const favoriteItem = async (linkObject) => {
+    await db.collection("Favorites").doc().set(linkObject);
+    alert("Guardado");
+  };
+
+  const getFavorites = async () => {
+    setLoading(true);
+    db.collection("Favorites")
+      .doc("j8N51cZt3NcqH5b1QkVf")
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          setFavorites({ ...doc.data(), id: doc.id });
+          setLoading(false);
+        } else {
+          setLoading(false);
+          setNotFound(true);
+        }
+      })
+      .catch((err) => {
+        setError(err);
+      });
+  };
+
   useEffect(() => {
+    getFavorites();
     getLinks();
   }, []);
 
@@ -45,9 +76,64 @@ const GameCard = () => {
             <>
               {productos.map((producto) => (
                 <div className="main-card" key={producto.name}>
-                  <div className="main-card__favorite">
-                    <img src="Img/start1.svg" alt="start" />
-                  </div>
+                  {favorites.name === producto.name ? (
+                    <div className="main-card__favorite">
+                      <img src="Img/start1black.svg" alt="start" />
+                    </div>
+                  ) : (
+                    <div className="main-card__favorite">
+                      <img
+                        src="Img/start1.svg"
+                        alt="start"
+                        onClick={() =>
+                          favoriteItem({ ...producto, uid: currentUser.uid })
+                        }
+                      />
+                    </div>
+                  )}
+                  {/* {favorites[0].name === producto.name ? (
+                    <div className="main-card__favorite">
+                      <img src="Img/start1black.svg" alt="start" />
+                    </div>
+                  ) : (
+                    <div className="main-card__favorite">
+                      <img
+                        src="Img/start1.svg"
+                        alt="start"
+                        onClick={() =>
+                          favoriteItem({ ...producto, uid: currentUser.uid })
+                        }
+                      />
+                    </div>
+                  )} */}
+
+                  {/* {favorites.map((res) =>
+                    res.name === producto.name ? (
+                      <div className="main-card__favorite">
+                        <img src="Img/start1black.svg" alt="start" />
+                      </div>
+                    ) : (
+                      <div className="main-card__favorite">
+                        <img
+                          src="Img/start1.svg"
+                          alt="start"
+                          onClick={() =>
+                            favoriteItem({ ...producto, uid: currentUser.uid })
+                          }
+                        />
+                      </div>
+                    )
+                  )} */}
+                  {/* <div className="main-card__favorite">
+                    <img
+                      src="Img/start1.svg"
+                      alt="start"
+                      onClick={() =>
+                        favoriteItem({ ...producto, uid: currentUser.uid })
+                      }
+                    />
+                  </div> */}
+
                   <div className="main-card__container">
                     <img
                       src={producto.url}
